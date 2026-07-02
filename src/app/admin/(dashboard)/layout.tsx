@@ -39,7 +39,7 @@ export default function DashboardLayout({
     <>
       <AdminSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <AdminTopbar onMenuClick={() => setSidebarOpen(true)} />
-      <main className="ml-0 lg:ml-64 pt-16 min-h-screen bg-slate-50">
+      <main className="ml-0 lg:ml-64 pt-16 min-h-screen bg-slate-50 text-slate-900">
         <div className="p-4 lg:p-6">{children}</div>
       </main>
       <AdminToastProvider />

@@ -114,7 +114,7 @@ export default function AdminHomePage() {
             type="text"
             value={data.heroTitle}
             onChange={(e) => updateField("heroTitle", e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </AdminFormField>
         <AdminFormField label="Mô tả Hero">
@@ -122,7 +122,7 @@ export default function AdminHomePage() {
             value={data.heroSubtitle}
             onChange={(e) => updateField("heroSubtitle", e.target.value)}
             rows={3}
-            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
           />
         </AdminFormField>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -131,7 +131,7 @@ export default function AdminHomePage() {
               type="text"
               value={data.ctaPrimary.text}
               onChange={(e) => updateField("ctaPrimary", { ...data.ctaPrimary, text: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </AdminFormField>
           <AdminFormField label="CTA chính — Link">
@@ -139,7 +139,7 @@ export default function AdminHomePage() {
               type="text"
               value={data.ctaPrimary.href}
               onChange={(e) => updateField("ctaPrimary", { ...data.ctaPrimary, href: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </AdminFormField>
           <AdminFormField label="CTA phụ — Text">
@@ -147,7 +147,7 @@ export default function AdminHomePage() {
               type="text"
               value={data.ctaSecondary.text}
               onChange={(e) => updateField("ctaSecondary", { ...data.ctaSecondary, text: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </AdminFormField>
           <AdminFormField label="CTA phụ — Link">
@@ -155,7 +155,7 @@ export default function AdminHomePage() {
               type="text"
               value={data.ctaSecondary.href}
               onChange={(e) => updateField("ctaSecondary", { ...data.ctaSecondary, href: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </AdminFormField>
         </div>
@@ -168,7 +168,7 @@ export default function AdminHomePage() {
             value={data.aboutShort}
             onChange={(e) => updateField("aboutShort", e.target.value)}
             rows={4}
-            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
           />
         </AdminFormField>
       </Section>
@@ -187,7 +187,7 @@ export default function AdminHomePage() {
                     newStats[idx] = { ...stat, value: Number(e.target.value) };
                     updateField("stats", newStats);
                   }}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </AdminFormField>
               <AdminFormField label="Hậu tố" className="w-24">
@@ -199,7 +199,7 @@ export default function AdminHomePage() {
                     newStats[idx] = { ...stat, suffix: e.target.value };
                     updateField("stats", newStats);
                   }}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </AdminFormField>
               <AdminFormField label="Nhãn" className="flex-1">
@@ -211,7 +211,7 @@ export default function AdminHomePage() {
                     newStats[idx] = { ...stat, label: e.target.value };
                     updateField("stats", newStats);
                   }}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </AdminFormField>
               <button
@@ -248,7 +248,7 @@ export default function AdminHomePage() {
                     newEco[idx] = { ...item, title: e.target.value };
                     updateField("ecosystem", newEco);
                   }}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </AdminFormField>
               <AdminFormField label="Mô tả" className="flex-1">
@@ -260,7 +260,7 @@ export default function AdminHomePage() {
                     newEco[idx] = { ...item, description: e.target.value };
                     updateField("ecosystem", newEco);
                   }}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </AdminFormField>
               <AdminFormField label="Icon" className="w-32">
@@ -272,7 +272,7 @@ export default function AdminHomePage() {
                     newEco[idx] = { ...item, icon: e.target.value };
                     updateField("ecosystem", newEco);
                   }}
-                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </AdminFormField>
               <button
@@ -302,7 +302,7 @@ export default function AdminHomePage() {
             type="text"
             value={data.ctaBottom.title}
             onChange={(e) => updateField("ctaBottom", { ...data.ctaBottom, title: e.target.value })}
-            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </AdminFormField>
         <AdminFormField label="Mô tả">
@@ -310,7 +310,7 @@ export default function AdminHomePage() {
             value={data.ctaBottom.description}
             onChange={(e) => updateField("ctaBottom", { ...data.ctaBottom, description: e.target.value })}
             rows={2}
-            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+            className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
           />
         </AdminFormField>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -319,7 +319,7 @@ export default function AdminHomePage() {
               type="text"
               value={data.ctaBottom.buttonText}
               onChange={(e) => updateField("ctaBottom", { ...data.ctaBottom, buttonText: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </AdminFormField>
           <AdminFormField label="Link nút">
@@ -327,7 +327,7 @@ export default function AdminHomePage() {
               type="text"
               value={data.ctaBottom.buttonHref}
               onChange={(e) => updateField("ctaBottom", { ...data.ctaBottom, buttonHref: e.target.value })}
-              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </AdminFormField>
         </div>

@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { login } from "@/lib/admin/auth";
 
 const loginSchema = z.object({
-  email: z.string().email("Email không hợp lệ"),
+  username: z.string().min(1, "Vui lòng nhập tên tài khoản"),
   password: z.string().min(1, "Vui lòng nhập mật khẩu"),
 });
 
@@ -28,11 +28,11 @@ export default function LoginPage() {
 
   const onSubmit = (data: LoginForm) => {
     setError("");
-    const success = login(data.email, data.password);
+    const success = login(data.username, data.password);
     if (success) {
       router.push("/admin/dashboard");
     } else {
-      setError("Email hoặc mật khẩu không đúng");
+      setError("Tên tài khoản hoặc mật khẩu không đúng");
     }
   };
 
@@ -52,19 +52,19 @@ export default function LoginPage() {
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
-              Email
+            <label htmlFor="username" className="block text-sm font-medium text-slate-700 mb-1.5">
+              Tên tài khoản
             </label>
             <input
-              id="email"
-              type="email"
-              autoComplete="email"
-              {...register("email")}
-              className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
-              placeholder="admin@cdmedia.vn"
+              id="username"
+              type="text"
+              autoComplete="username"
+              {...register("username")}
+              className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
+              placeholder=""
             />
-            {errors.email && (
-              <p className="text-red-600 text-xs mt-1">{errors.email.message}</p>
+            {errors.username && (
+              <p className="text-red-600 text-xs mt-1">{errors.username.message}</p>
             )}
           </div>
 
@@ -77,7 +77,7 @@ export default function LoginPage() {
               type="password"
               autoComplete="current-password"
               {...register("password")}
-              className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
+              className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
               placeholder="••••••••"
             />
             {errors.password && (
