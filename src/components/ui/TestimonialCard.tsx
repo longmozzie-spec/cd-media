@@ -8,11 +8,11 @@ interface TestimonialCardProps {
   role: string;
   company: string;
   content: string;
-  avatar: string;
+  avatar?: string;
   index?: number;
 }
 
-export default function TestimonialCard({ name, role, company, content, avatar, index = 0 }: TestimonialCardProps) {
+export default function TestimonialCard({ name, role, company, content, index = 0 }: TestimonialCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -23,12 +23,9 @@ export default function TestimonialCard({ name, role, company, content, avatar, 
     >
       <Quote size={32} className="text-[#E50914]/30 mb-4" />
       <p className="text-[#A1A1AA] text-sm leading-relaxed mb-6">{content}</p>
-      <div className="flex items-center gap-3">
-        <img src={avatar} alt={name} className="w-10 h-10 rounded-full object-cover" />
-        <div>
-          <p className="text-white font-medium text-sm">{name}</p>
-          <p className="text-[#A1A1AA]/70 text-xs">{role} — {company}</p>
-        </div>
+      <div>
+        <p className="text-white font-medium text-sm">{name}</p>
+        <p className="text-[#A1A1AA]/70 text-xs">{role} — {company}</p>
       </div>
     </motion.div>
   );
