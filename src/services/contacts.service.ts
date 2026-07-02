@@ -1,0 +1,77 @@
+import { LocalStorageService } from "./storage.service";
+import { ContactSubmission } from "@/types/contact";
+
+const seedContacts: ContactSubmission[] = [
+  {
+    id: "contact-1",
+    name: "Nguyễn Văn Minh",
+    phone: "0901234567",
+    email: "minh@techcorp.vn",
+    company: "TechCorp Vietnam",
+    need: "Sản xuất video",
+    budget: "50 - 100 triệu",
+    content: "Chúng tôi cần sản xuất video giới thiệu sản phẩm mới, dự kiến 3 video ngắn 60s cho social media.",
+    status: "new",
+    createdAt: "2026-06-28T10:30:00Z",
+    updatedAt: "2026-06-28T10:30:00Z",
+  },
+  {
+    id: "contact-2",
+    name: "Trần Thị Hương",
+    phone: "0987654321",
+    email: "huong@greenlife.vn",
+    company: "Green Life JSC",
+    need: "Truyền thông thương hiệu",
+    budget: "Trên 100 triệu",
+    content: "Cần xây dựng chiến dịch truyền thông cho thương hiệu mới ra mắt, bao gồm video TVC và nội dung social.",
+    status: "contacted",
+    note: "Đã gọi điện tư vấn, hẹn meeting tuần tới",
+    createdAt: "2026-06-25T14:00:00Z",
+    updatedAt: "2026-06-26T09:00:00Z",
+  },
+  {
+    id: "contact-3",
+    name: "Lê Hoàng Nam",
+    phone: "0912345678",
+    email: "nam@startupx.io",
+    company: "StartupX",
+    need: "Digital marketing",
+    budget: "30 - 50 triệu",
+    content: "Cần quản lý fanpage và chạy ads cho sản phẩm app mobile mới.",
+    status: "converted",
+    note: "Đã ký hợp đồng 3 tháng",
+    createdAt: "2026-06-20T08:00:00Z",
+    updatedAt: "2026-06-22T16:00:00Z",
+  },
+  {
+    id: "contact-4",
+    name: "Phạm Đức Anh",
+    phone: "0938765432",
+    email: "anh@hotel.vn",
+    company: "Luxury Hotel Group",
+    need: "Sản xuất video",
+    budget: "50 - 100 triệu",
+    content: "Quay phim giới thiệu resort mới khai trương tại Phú Quốc.",
+    status: "new",
+    createdAt: "2026-07-01T11:00:00Z",
+    updatedAt: "2026-07-01T11:00:00Z",
+  },
+  {
+    id: "contact-5",
+    name: "Vũ Minh Trang",
+    phone: "0976543210",
+    company: "FashionVN",
+    need: "Quay sự kiện",
+    budget: "10 - 30 triệu",
+    content: "Cần quay event ra mắt BST mới tại Hà Nội, 1 ngày.",
+    status: "rejected",
+    note: "Ngân sách không phù hợp",
+    createdAt: "2026-06-15T09:30:00Z",
+    updatedAt: "2026-06-16T10:00:00Z",
+  },
+];
+
+export const contactsService = new LocalStorageService<ContactSubmission>(
+  "cdmedia_admin_contacts",
+  seedContacts
+);
