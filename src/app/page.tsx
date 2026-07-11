@@ -43,7 +43,7 @@ export default function HomePage() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E50914]/10 border border-[#E50914]/20 text-[#E50914] text-sm font-medium mb-6">
                 <Layers size={16} />
-                Creative Digital Media Agency
+                CD Media — Agency Truyền Thông
               </span>
             </motion.div>
 

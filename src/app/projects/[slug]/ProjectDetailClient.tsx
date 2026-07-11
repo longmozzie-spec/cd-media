@@ -15,12 +15,20 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E50914]/8 rounded-full blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <nav className="mb-6 text-sm text-[#A1A1AA]" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-[#E50914] transition-colors">Trang chủ</Link>
+            <span className="mx-2 text-[#27272A]">/</span>
+            <Link href="/projects" className="hover:text-[#E50914] transition-colors">Dự án</Link>
+            <span className="mx-2 text-[#27272A]">/</span>
+            <span className="text-[#E50914]">Dự án chi tiết</span>
+          </nav>
           <Link href="/projects" className="inline-flex items-center gap-2 text-[#A1A1AA] hover:text-[#E50914] transition-colors mb-8">
             <ArrowLeft size={16} /> Quay lại dự án
           </Link>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 rounded-full bg-[#E50914]/20 text-[#E50914] text-sm">{project.category}</span>
+              <span className="px-3 py-1 rounded-full bg-[#E50914]/20 text-[#E50914] text-sm">{project.clientType}</span>
               <span className="px-3 py-1 rounded-full bg-white/10 text-[#A1A1AA] text-sm">{project.industry}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h1>
@@ -84,31 +92,45 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="sticky top-24 rounded-2xl bg-[#1A1A1E] border border-[#27272A] p-6 space-y-6">
-                <div>
-                  <h4 className="text-[#A1A1AA] text-sm mb-1">Khách hàng</h4>
-                  <p className="text-white font-medium">{project.client}</p>
-                </div>
-                <div>
-                  <h4 className="text-[#A1A1AA] text-sm mb-1">Ngành</h4>
-                  <p className="text-white font-medium">{project.industry}</p>
-                </div>
-                <div>
-                  <h4 className="text-[#A1A1AA] text-sm mb-2">Dịch vụ triển khai</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.services.map((s) => (
-                      <span key={s} className="px-3 py-1 rounded-full bg-[#E50914]/10 text-[#E50914] text-xs">
-                        {s}
-                      </span>
-                    ))}
+              <div className="sticky top-24 space-y-6">
+                <div className="rounded-2xl bg-[#1A1A1E] border border-[#27272A] p-6 space-y-6">
+                  <div>
+                    <h4 className="text-[#A1A1AA] text-sm mb-1">Khách hàng</h4>
+                    <p className="text-white font-medium">{project.client}</p>
                   </div>
+                  <div>
+                    <h4 className="text-[#A1A1AA] text-sm mb-1">Ngành</h4>
+                    <p className="text-white font-medium">{project.industry}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-[#A1A1AA] text-sm mb-2">Dịch vụ triển khai</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.services.map((s) => (
+                        <span key={s} className="px-3 py-1 rounded-full bg-[#E50914]/10 text-[#E50914] text-xs">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className="block w-full text-center px-6 py-3 bg-[#E50914] text-white font-semibold rounded-xl hover:bg-[#DC2626] transition-all"
+                  >
+                    Liên hệ triển khai
+                  </Link>
                 </div>
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-3 bg-[#E50914] text-white font-semibold rounded-xl hover:bg-[#DC2626] transition-all"
-                >
-                  Liên hệ triển khai
-                </Link>
+
+                {/* Box Đặt lịch tư vấn */}
+                <div className="rounded-2xl bg-[#E50914]/[0.08] border border-[#E50914]/30 p-6">
+                  <h4 className="text-white font-semibold text-lg mb-1">Đặt lịch tư vấn</h4>
+                  <p className="text-[#A1A1AA] text-sm mb-4">Miễn phí · 45 phút · Không áp lực</p>
+                  <Link
+                    href="/contact"
+                    className="block w-full text-center px-6 py-3 bg-white/5 border border-[#27272A] text-white font-medium rounded-xl hover:bg-white/10 hover:border-white/20 transition-all"
+                  >
+                    Đặt lịch ngay
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

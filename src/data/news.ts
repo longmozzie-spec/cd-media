@@ -9,13 +9,13 @@ export interface NewsArticle {
   featured: boolean;
 }
 
+// Filter theo tài liệu khách hàng (PDF Figma — trang Tin tức)
 export const newsCategories = [
   "Tất cả",
   "Quân sự",
   "Why?",
   "Khám phá",
   "Travel",
-  "Triển lãm ảo",
 ];
 
 export const news: NewsArticle[] = [

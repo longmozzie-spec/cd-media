@@ -16,15 +16,15 @@ export default function NewsClient() {
   return (
     <>
       <HeroSection
-        title="Tin tức & Kiến thức"
-        subtitle="Xu hướng marketing, chiến lược truyền thông và bài học từ thực chiến."
+        title="Tin tức & Nội dung số"
+        subtitle="Phân tích chuyên sâu · Góc nhìn đa chiều trung lập · Chia sẻ giá trị cộng đồng."
         compact
       />
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FilterTabs categories={newsCategories} active={activeFilter} onChange={setActiveFilter} />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((article, i) => (
               <NewsCard key={article.slug} article={article} index={i} />
             ))}
