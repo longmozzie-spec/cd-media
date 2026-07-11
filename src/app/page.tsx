@@ -14,10 +14,10 @@ import { news } from "@/data/news";
 
 // 4 trụ cột theo tài liệu khách hàng (PDF Figma — trang chủ)
 const ecosystem = [
-  { icon: Clapperboard, title: "Sản xuất Media", desc: "Phim tài liệu, TVC, phim doanh nghiệp — chuẩn điện ảnh", href: "/services" },
-  { icon: Megaphone, title: "Giải pháp truyền thông", desc: "Tư vấn chiến lược và truyền thông thương hiệu đa kênh", href: "/services" },
+  { icon: Clapperboard, title: "Sản xuất Media", desc: "Phim tài liệu, TVC, phim doanh nghiệp — chuẩn điện ảnh", href: "/services#san-xuat-media" },
+  { icon: Megaphone, title: "Giải pháp truyền thông", desc: "Tư vấn chiến lược và truyền thông thương hiệu đa kênh", href: "/services#giai-phap-truyen-thong" },
   { icon: Target, title: "Marketing tổng thể", desc: "Chiến lược, nội dung và đo lường bằng số liệu thực tế", href: "/services/marketing-tong-the" },
-  { icon: GraduationCap, title: "Đào tạo & Chuyển giao", desc: "Đào tạo kỹ năng sản xuất nội dung và chiến lược phân phối", href: "/services" },
+  { icon: GraduationCap, title: "Đào tạo & Chuyển giao", desc: "Đào tạo kỹ năng sản xuất nội dung và chiến lược phân phối", href: "/services#dao-tao-chuyen-giao" },
 ];
 
 export default function HomePage() {

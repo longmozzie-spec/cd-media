@@ -3,6 +3,8 @@ export interface Project {
   title: string;
   client: string;
   category: string;
+  // Phân loại theo tài liệu khách hàng (PDF Figma — trang Dự án)
+  clientType: "Tập đoàn" | "Doanh nghiệp" | "Cơ quan nhà nước" | "Nội dung số";
   industry: string;
   thumbnail: string;
   description: string;
@@ -15,9 +17,13 @@ export interface Project {
   videoId?: string;
 }
 
+// Filter theo tài liệu khách hàng (PDF Figma — trang Dự án)
 export const projectCategories = [
   "Tất cả",
-  "Video nổi bật",
+  "Tập đoàn",
+  "Doanh nghiệp",
+  "Cơ quan nhà nước",
+  "Nội dung số",
 ];
 
 export const projects: Project[] = [
@@ -28,6 +34,7 @@ export const projects: Project[] = [
     title: "Bạn Đã Bị Lừa Bởi Những Lầm Tưởng Quân Sự Trên Phim! | Phần 3",
     client: "CD Media - Quân Sự",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Quân sự & Quốc phòng",
     thumbnail: "https://img.youtube.com/vi/6Ppio3dR5N4/maxresdefault.jpg",
     description: "Video phân tích những lầm tưởng phổ biến về quân sự được Hollywood truyền bá qua phim ảnh.",
@@ -44,6 +51,7 @@ export const projects: Project[] = [
     title: "Cuộc Đổ Bộ Vịnh Con Lợn - Sai Lầm Khiến Mỹ Phải Trả Giá",
     client: "CD Media - Quân Sự",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Quân sự & Quốc phòng",
     thumbnail: "https://img.youtube.com/vi/8kZFqU_Xc8w/maxresdefault.jpg",
     description: "Phân tích chiến dịch quân sự thất bại của CIA tại Cuba năm 1961 và bài học lịch sử.",
@@ -60,6 +68,7 @@ export const projects: Project[] = [
     title: "Vì Sao Bắc Kinh Quyết Định Tấn Công Việt Nam Năm 1979?",
     client: "CD Media - Quân Sự",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Quân sự & Quốc phòng",
     thumbnail: "https://img.youtube.com/vi/-JOpp_jPuTQ/maxresdefault.jpg",
     description: "Phân tích bối cảnh địa chính trị dẫn đến cuộc chiến biên giới phía Bắc 1979.",
@@ -76,6 +85,7 @@ export const projects: Project[] = [
     title: "Tàu Sân Bay Không Tiêm Kích - Bi Kịch Của Hải Quân Thái Lan",
     client: "CD Media - Quân Sự",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Quân sự & Quốc phòng",
     thumbnail: "https://img.youtube.com/vi/f1YSsM_pgR4/maxresdefault.jpg",
     description: "Câu chuyện về tàu sân bay HTMS Chakri Naruebet — tàu sân bay duy nhất của Đông Nam Á và thực trạng đáng buồn.",
@@ -93,6 +103,7 @@ export const projects: Project[] = [
     title: "Vì sao hàng VẠN người đến VAY TIỀN Bà Chúa Kho đầu năm?",
     client: "CD Media - DOC",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Văn hóa & Tâm linh",
     thumbnail: "https://img.youtube.com/vi/xoSVOXtkieY/maxresdefault.jpg",
     description: "Khám phá sự thật và tâm linh phía sau phong tục vay tiền Bà Chúa Kho mỗi dịp Tết.",
@@ -109,6 +120,7 @@ export const projects: Project[] = [
     title: "\"Bóng Đá\" Mỹ: Cuộc Chiến Thực Sự Trên Sân Cỏ!",
     client: "CD Media - DOC",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Thể thao & Văn hóa",
     thumbnail: "https://img.youtube.com/vi/HxxU3zxjEFY/maxresdefault.jpg",
     description: "Giải mã bóng đá Mỹ (American Football) — môn thể thao khắc nghiệt nhất nước Mỹ.",
@@ -126,6 +138,7 @@ export const projects: Project[] = [
     title: "Cà Phê Hà Nội: Nhịp Sống Không Vội Được Đâu!",
     client: "CD Media - DOC",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Ẩm thực & Văn hóa",
     thumbnail: "https://img.youtube.com/vi/ptrG_WxCkR0/maxresdefault.jpg",
     description: "Khám phá văn hóa cà phê Hà Nội — từ cà phê vỉa hè đến specialty coffee.",
@@ -142,6 +155,7 @@ export const projects: Project[] = [
     title: "Rượu Vang: Lý Do Khiến Người Pháp Trở Nên Quý Tộc",
     client: "CD Media - DOC",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Ẩm thực & Văn hóa",
     thumbnail: "https://img.youtube.com/vi/J7kYy0wqZ4s/maxresdefault.jpg",
     description: "Hành trình của rượu vang từ vườn nho đến văn hóa quý tộc Pháp.",
@@ -159,6 +173,7 @@ export const projects: Project[] = [
     title: "Elizabeth Báthory – Nữ Bá Tước Tắm Máu Có Thật Không?",
     client: "CD Media - Khám Phá",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Lịch sử & Bí ẩn",
     thumbnail: "https://img.youtube.com/vi/rF3F1aNSgnU/maxresdefault.jpg",
     description: "Khám phá câu chuyện thật về Elizabeth Báthory — nữ bá tước nổi tiếng nhất lịch sử châu Âu.",
@@ -175,6 +190,7 @@ export const projects: Project[] = [
     title: "Tây Tạng – Số Phận Của Đế Chế Từng Làm Rung Chuyển Trung Hoa",
     client: "CD Media - Khám Phá",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Lịch sử & Địa chính trị",
     thumbnail: "https://img.youtube.com/vi/BcnuQGeTlZo/maxresdefault.jpg",
     description: "Lịch sử Tây Tạng từ đế chế hùng mạnh đến số phận hiện tại.",
@@ -191,6 +207,7 @@ export const projects: Project[] = [
     title: "Thời Kỳ Trung Quốc Thống Trị Biển Cả Ít Người Biết",
     client: "CD Media - Khám Phá",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Lịch sử & Hàng hải",
     thumbnail: "https://img.youtube.com/vi/D-GjVF_PGsI/maxresdefault.jpg",
     description: "Khám phá thời kỳ hải quân Trung Quốc thống trị đại dương dưới triều Minh.",
@@ -207,6 +224,7 @@ export const projects: Project[] = [
     title: "Sao Hỏa Từng Giống Trái Đất Nhưng Đã Chết Như Thế Nào?",
     client: "CD Media - Khám Phá",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Khoa học & Vũ trụ",
     thumbnail: "https://img.youtube.com/vi/OvVHnX8llTk/maxresdefault.jpg",
     description: "Giải mã bí ẩn Sao Hỏa — từ hành tinh xanh đến sa mạc đỏ chết chóc.",
@@ -224,6 +242,7 @@ export const projects: Project[] = [
     title: "Vì Sao Hà Nội Đang Bước Vào Cuộc Đại Tái Thiết?",
     client: "CD Media - Why?",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Kinh tế & Đô thị",
     thumbnail: "https://img.youtube.com/vi/pP71ydaKlDM/maxresdefault.jpg",
     description: "Phân tích cuộc đại tái thiết đô thị Hà Nội — từ metro, cầu vượt đến quy hoạch mới.",
@@ -240,6 +259,7 @@ export const projects: Project[] = [
     title: "Vì Sao Việt Nam Đang Đối Mặt Với Nhiều Nghịch Lý?",
     client: "CD Media - Why?",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Kinh tế & Xã hội",
     thumbnail: "https://img.youtube.com/vi/cZ_p2XCBzhw/maxresdefault.jpg",
     description: "Bản full phân tích các nghịch lý kinh tế - xã hội Việt Nam đương đại.",
@@ -256,6 +276,7 @@ export const projects: Project[] = [
     title: "Hà Nội Thừa Nhà Nhưng Vì Sao Người Lao Động Vẫn Thiếu Chỗ Ở?",
     client: "CD Media - Why?",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Bất động sản & Xã hội",
     thumbnail: "https://img.youtube.com/vi/rjfG4Uu5UWU/maxresdefault.jpg",
     description: "Nghịch lý thị trường bất động sản Hà Nội — thừa nhà cao cấp, thiếu nhà bình dân.",
@@ -272,6 +293,7 @@ export const projects: Project[] = [
     title: "Vì Sao Càng Nhận Viện Trợ Các Quốc Gia Càng Nghèo?",
     client: "CD Media - Why?",
     category: "Video nổi bật",
+    clientType: "Nội dung số",
     industry: "Kinh tế quốc tế",
     thumbnail: "https://img.youtube.com/vi/6_CJGq8U-Ao/maxresdefault.jpg",
     description: "Phân tích paradox viện trợ quốc tế — tại sao tiền viện trợ có thể gây hại nhiều hơn lợi.",
@@ -283,4 +305,29 @@ export const projects: Project[] = [
     featured: false,
     videoId: "6_CJGq8U-Ao",
   },
+
+  // =========================================================================
+  // TODO: DỰ ÁN KHÁCH HÀNG CẦN BỔ SUNG (Tập đoàn / Doanh nghiệp / Cơ quan nhà nước)
+  // -------------------------------------------------------------------------
+  // Bỏ dấu comment và điền nội dung thật. Ảnh đặt tại /public/projects/.
+  // clientType quyết định dự án lên bộ lọc nào ở trang /projects.
+  //
+  // {
+  //   slug: "ten-du-an-slug",              // đường dẫn URL, không dấu, dùng gạch nối
+  //   title: "Tên dự án",
+  //   client: "Tên khách hàng",            // VD: Viettel, VTV, Sun Group...
+  //   category: "Dự án",
+  //   clientType: "Tập đoàn",              // "Tập đoàn" | "Doanh nghiệp" | "Cơ quan nhà nước"
+  //   industry: "Ngành",                   // VD: Viễn thông, Bất động sản...
+  //   thumbnail: "/projects/ten-du-an-thumb.jpg",
+  //   description: "Mô tả ngắn 1-2 câu.",
+  //   challenge: "Bài toán khách hàng gặp phải.",
+  //   solution: "Giải pháp CD Media triển khai.",
+  //   results: ["Kết quả 1", "Kết quả 2", "Kết quả 3"],
+  //   services: ["Dịch vụ 1", "Dịch vụ 2"],
+  //   images: ["/projects/ten-du-an-1.jpg", "/projects/ten-du-an-2.jpg"],
+  //   featured: true,                      // true = hiện ở trang chủ
+  //   // videoId: "YOUTUBE_ID",            // (tuỳ chọn) nếu dự án có video YouTube
+  // },
+  // =========================================================================
 ];

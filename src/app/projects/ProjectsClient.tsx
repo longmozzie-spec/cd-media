@@ -45,7 +45,7 @@ export default function ProjectsClient() {
 
   const filtered = activeFilter === "Tất cả"
     ? projects
-    : projects.filter((p) => p.category === activeFilter);
+    : projects.filter((p) => p.clientType === activeFilter);
 
   return (
     <>
