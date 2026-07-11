@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/ui/HeroSection";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -44,6 +46,14 @@ export default function ServicesClient() {
             {services.marketing.items.map((item, i) => (
               <ServiceCard key={item.title} {...item} index={i} />
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/services/marketing-tong-the"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#E50914] text-white font-semibold rounded-xl hover:bg-[#DC2626] transition-all shadow-lg shadow-[#E50914]/20"
+            >
+              Xem chi tiết Marketing tổng thể <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Play, Camera, TrendingUp, Share2, Monitor, Layers, Shield } from "lucide-react";
+import { ArrowRight, Play, Clapperboard, Megaphone, Target, GraduationCap, Layers } from "lucide-react";
 import StatNumber from "@/components/ui/StatNumber";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
@@ -12,11 +12,12 @@ import { stats } from "@/data/common";
 import { projects } from "@/data/projects";
 import { news } from "@/data/news";
 
+// 4 trụ cột theo tài liệu khách hàng (PDF Figma — trang chủ)
 const ecosystem = [
-  { icon: Camera, title: "Sản xuất Phim", desc: "Phim tài liệu, TVC, phim diễn hoạ lịch sử chất lượng cao" },
-  { icon: Monitor, title: "Nội dung số", desc: "YouTube, Facebook, TikTok — 400 triệu views" },
-  { icon: Shield, title: "Quân sự & Kiến thức", desc: "Nội dung chuyên sâu đa lĩnh vực hàng đầu" },
-  { icon: Share2, title: "Triển lãm ảo", desc: "Virtual exhibition, trải nghiệm 360° tương tác" },
+  { icon: Clapperboard, title: "Sản xuất Media", desc: "Phim tài liệu, TVC, phim doanh nghiệp — chuẩn điện ảnh", href: "/services" },
+  { icon: Megaphone, title: "Giải pháp truyền thông", desc: "Tư vấn chiến lược và truyền thông thương hiệu đa kênh", href: "/services" },
+  { icon: Target, title: "Marketing tổng thể", desc: "Chiến lược, nội dung và đo lường bằng số liệu thực tế", href: "/services/marketing-tong-the" },
+  { icon: GraduationCap, title: "Đào tạo & Chuyển giao", desc: "Đào tạo kỹ năng sản xuất nội dung và chiến lược phân phối", href: "/services" },
 ];
 
 export default function HomePage() {
@@ -124,7 +125,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             label="Hệ sinh thái"
-            title="Giải pháp truyền thông toàn diện"
+            title="Hệ sinh thái giải pháp truyền thông tích hợp"
             description="4 trụ cột dịch vụ phủ kín mọi nhu cầu truyền thông của doanh nghiệp."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,13 +136,17 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative rounded-2xl bg-[#1A1A1E] border border-[#27272A] p-6 hover:border-[#E50914]/30 hover:shadow-lg hover:shadow-[#E50914]/5 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-[#E50914]/10 flex items-center justify-center mb-4 group-hover:bg-[#E50914]/20 transition-all">
-                  <item.icon size={28} className="text-[#E50914]" />
-                </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
-                <p className="text-[#A1A1AA] text-sm">{item.desc}</p>
+                <Link
+                  href={item.href}
+                  className="group relative flex flex-col h-full rounded-2xl bg-[#1A1A1E] border border-[#27272A] p-6 hover:border-[#E50914]/30 hover:shadow-lg hover:shadow-[#E50914]/5 transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-[#E50914]/10 flex items-center justify-center mb-4 group-hover:bg-[#E50914]/20 transition-all">
+                    <item.icon size={28} className="text-[#E50914]" />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-[#A1A1AA] text-sm">{item.desc}</p>
+                </Link>
               </motion.div>
             ))}
           </div>

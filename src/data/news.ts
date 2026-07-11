@@ -20,6 +20,32 @@ export const newsCategories = [
 
 export const news: NewsArticle[] = [
   {
+    slug: "phu-quoc-don-apec-2027",
+    title: "Phú Quốc Đón APEC 2027: Cơ Hội Vàng Nhưng Chưa Sẵn Sàng?",
+    category: "Why?",
+    thumbnail: "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&h=400&fit=crop",
+    description: "Sau Tuần lễ Cấp cao APEC 2017 tại Đà Nẵng, Việt Nam tiếp tục được chọn đăng cai. Phú Quốc sẽ đón APEC 2027 — cơ hội lớn nhưng hạ tầng liệu đã đủ sẵn sàng?",
+    date: "2026-07-08",
+    content: `Sau Tuần lễ Cấp cao APEC 2017 tại Đà Nẵng, Việt Nam tiếp tục được tín nhiệm chọn đăng cai. Lần này, Phú Quốc sẽ là nơi tổ chức APEC 2027 với sự tham dự của lãnh đạo các nền kinh tế thành viên. Cơ hội là rất lớn, nhưng câu hỏi đặt ra: hạ tầng hòn đảo đã sẵn sàng đến đâu?
+
+## Quá tải và những thách thức cấp bách
+
+Lịch sử hàng không Phú Quốc bắt đầu từ những năm 1930. Sân bay quốc tế Phú Quốc (PQC) hiện nay chính thức hoạt động năm 2012 với tổng vốn đầu tư hơn 16.000 tỷ đồng, đạt tiêu chuẩn 4E của ICAO, có khả năng tiếp nhận các dòng máy bay thân rộng như Boeing 777 và Airbus A350. Công suất thiết kế ban đầu là 2,65 triệu khách mỗi năm.
+
+Đến năm 2018, sân bay được nâng công suất lên 4 triệu khách/năm. Nhưng thực tế đã vượt xa dự báo: năm 2024, PQC đón tới 4,1 triệu lượt khách, trong đó gần 2 triệu là khách quốc tế. Vào cao điểm, sân bay phải xử lý tới 140 lượt hạ cánh mỗi ngày — một áp lực khổng lồ so với hạ tầng hiện có. Để so sánh, sân bay Changi của Singapore vận hành tới 800 làn kiểm soát tự động.
+
+## Cơ hội bứt phá nhưng áp lực lớn
+
+Theo quy hoạch đến năm 2050, Phú Quốc đặt mục tiêu đón 10 triệu khách vào năm 2030 và 18 triệu khách vào năm 2050. APEC 2027 là cú hích quan trọng, đòi hỏi nâng cấp hạ tầng đồng bộ trong thời gian ngắn.
+
+Dự kiến sự kiện sẽ tiếp đón từ 30 đến 50 chuyên cơ, bao gồm cả những chiếc đặc biệt như Không lực Một của Mỹ hay Boeing 747 chở lãnh đạo Trung Quốc. Trong khi đó, sân đỗ hiện tại chỉ đủ chỗ cho khoảng 8 máy bay thân hẹp cỡ A320 — một khoảng cách lớn cần được giải quyết.
+
+## Đi tìm giải pháp cấp thiết
+
+APEC 2027 vừa là cơ hội vàng để Phú Quốc khẳng định vị thế du lịch và kinh tế khu vực, vừa là bài kiểm tra khắc nghiệt về năng lực hạ tầng. Việc đầu tư mở rộng sân bay, hệ thống giao thông, lưu trú và dịch vụ cần được triển khai quyết liệt và đúng tiến độ để hòn đảo thực sự sẵn sàng cho sự kiện tầm cỡ quốc tế.`,
+    featured: true,
+  },
+  {
     slug: "5-xu-huong-video-marketing-2025",
     title: "5 xu hướng Video Marketing không thể bỏ qua năm 2025",
     category: "Khám phá",
