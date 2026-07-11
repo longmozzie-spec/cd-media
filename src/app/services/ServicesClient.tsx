@@ -5,10 +5,13 @@ import { ArrowRight, Download } from "lucide-react";
 import HeroSection from "@/components/ui/HeroSection";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ServiceCard from "@/components/ui/ServiceCard";
+import NewsCard from "@/components/ui/NewsCard";
 import ContactForm from "@/components/ui/ContactForm";
 import { servicePillars } from "@/data/services";
+import { news } from "@/data/news";
 
 export default function ServicesClient() {
+  const insights = news.slice(0, 4);
   return (
     <>
       <HeroSection
@@ -77,8 +80,25 @@ export default function ServicesClient() {
         </section>
       ))}
 
-      {/* Liên hệ nhanh */}
+      {/* Góc nhìn chuyên ngành */}
       <section className="py-20 border-t border-[#27272A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-12">
+            <SectionTitle label="Insight" title="Góc nhìn chuyên ngành" align="left" />
+            <Link href="/news" className="hidden md:inline-flex items-center gap-2 text-[#E50914] font-medium hover:gap-3 transition-all">
+              Xem tất cả <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {insights.map((article, i) => (
+              <NewsCard key={article.slug} article={article} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Liên hệ nhanh */}
+      <section className="py-20 bg-[#121214]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mx-auto">
             <SectionTitle label="Liên hệ nhanh" title="Nhận tư vấn giải pháp" description="Để lại thông tin, CD Media sẽ liên hệ bạn trong 24 giờ." />
