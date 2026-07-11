@@ -20,7 +20,7 @@ export const services = {
       },
       {
         title: "Nội dung YouTube",
-        description: "Sản xuất video chuyên đề: quân sự, khoa học, khám phá, du lịch — 400 triệu views.",
+        description: "Sản xuất video chuyên đề: quân sự, khoa học, khám phá, du lịch — hơn 1 tỷ lượt xem tích lũy.",
         icon: "Video",
       },
       {
@@ -37,7 +37,7 @@ export const services = {
   },
   communication: {
     title: "Nội dung số & Truyền thông",
-    description: "Hệ thống 4 kênh YouTube và 5 kênh Facebook với hơn 2 triệu subscribers — CD Media là chuyên gia nội dung số.",
+    description: "Hệ thống kênh YouTube và Facebook với 2.6 triệu người theo dõi đa nền tảng — CD Media là chuyên gia nội dung số.",
     items: [
       {
         title: "Quân sự & Quốc phòng",

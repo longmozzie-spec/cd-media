@@ -68,7 +68,7 @@ export default function HomePage() {
               className="text-xl text-[#A1A1AA] max-w-2xl mb-10 leading-relaxed"
             >
               CD Media — đơn vị sản xuất nội dung số và phim tài liệu hàng đầu Việt Nam.
-              400 triệu lượt xem YouTube. 2 triệu người theo dõi. Đối tác của VTV, Viettel.
+              Hơn 1 tỷ lượt xem tích lũy. 2.6 triệu người theo dõi đa nền tảng. Đối tác của VTV, Viettel.
             </motion.p>
 
             <motion.div
@@ -103,7 +103,7 @@ export default function HomePage() {
             <SectionTitle
               label="Về CD Media"
               title="Chia sẻ kiến thức đa lĩnh vực qua nội dung video chất lượng cao"
-              description="Thành lập năm 2021, CD Media đã trở thành đơn vị truyền thông nội dung số hàng đầu với hệ thống kênh YouTube và Facebook thu hút hàng trăm triệu lượt xem."
+              description="Khởi đầu từ 2013 với năng lực sản xuất phim chuẩn điện ảnh, CD Media đã trở thành đơn vị truyền thông nội dung số hàng đầu với hệ thống kênh YouTube và Facebook thu hút hơn 1 tỷ lượt xem."
             />
           </div>
         </div>

@@ -10,7 +10,7 @@ const values = [
   { icon: Lightbulb, title: "Kết nối tri thức", desc: "Mang kiến thức chuyên sâu đến gần hơn với công chúng qua nội dung số." },
   { icon: Zap, title: "Chất lượng cao", desc: "Mỗi thước phim, mỗi nội dung đều đạt chuẩn phát sóng truyền hình." },
   { icon: Shield, title: "Nhân văn", desc: "Truyền tải câu chuyện chân thực, giàu giá trị bền vững." },
-  { icon: Target, title: "Hiệu quả", desc: "400 triệu views YouTube — con số nói lên tất cả." },
+  { icon: Target, title: "Hiệu quả", desc: "Hơn 1 tỷ lượt xem tích lũy — con số nói lên tất cả." },
 ];
 
 const channels = [
@@ -41,17 +41,17 @@ export default function AboutClient() {
                 Câu chuyện
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Từ nhóm sáng tạo YouTube đến đơn vị truyền thông chuyên nghiệp
+                Từ năng lực sản xuất phim chuẩn điện ảnh đến Agency truyền thông toàn diện
               </h2>
               <div className="space-y-4 text-[#A1A1AA] leading-relaxed">
                 <p>
-                  CD Media được thành lập năm 2021, khởi đầu là nhóm sáng tạo nội dung trên YouTube.
-                  Với niềm đam mê chia sẻ kiến thức đa lĩnh vực — từ quân sự, khoa học đến du lịch, văn hóa —
-                  chúng tôi nhanh chóng thu hút hàng triệu lượt xem.
+                  Bắt đầu từ năm 2013 với năng lực sản xuất phim chuyên nghiệp chuẩn điện ảnh, CD Media
+                  từng bước xây dựng nền tảng nội dung chất lượng cao trên nhiều lĩnh vực.
                 </p>
                 <p>
-                  Sau hơn 4 năm phát triển, CD Media hiện vận hành hệ thống 4 kênh YouTube với 2 triệu subscribers
-                  và 400 triệu lượt xem, cùng 5 kênh Facebook đạt 240K+ followers.
+                  Đến năm 2018, chúng tôi chinh phục công chúng trên hệ sinh thái số. Hiện nay CD Media
+                  vận hành hệ thống kênh YouTube và Facebook với 2.6 triệu người theo dõi đa nền tảng và
+                  hơn 1 tỷ lượt xem tích lũy.
                 </p>
                 <p>
                   Qua công ty thành viên Alva, CD Media còn sản xuất phim tài liệu chất lượng cao,
@@ -75,8 +75,8 @@ export default function AboutClient() {
               </div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-2xl bg-gradient-to-br from-[#E50914] to-[#DC2626] flex items-center justify-center">
                 <div className="text-center">
-                  <span className="text-3xl font-bold text-white">2021</span>
-                  <p className="text-white/80 text-xs">Năm thành lập</p>
+                  <span className="text-3xl font-bold text-white">2013</span>
+                  <p className="text-white/80 text-xs">Khởi đầu hành trình</p>
                 </div>
               </div>
             </motion.div>

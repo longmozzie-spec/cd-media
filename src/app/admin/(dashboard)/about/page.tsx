@@ -17,10 +17,9 @@ const defaultAbout: AboutContent = {
   story:
     "## Câu chuyện CD Media\n\nCD Media được thành lập với sứ mệnh kết nối tri thức và chia sẻ giá trị thông qua các sản phẩm truyền thông chất lượng cao.\n\nTừ những ngày đầu, chúng tôi đã kiên định với triết lý sáng tạo nội dung có chiều sâu, mang giá trị thực sự đến cộng đồng.",
   timeline: [
-    { year: "2015", title: "Thành lập", description: "CD Media ra đời với đội ngũ 5 thành viên" },
-    { year: "2018", title: "Mở rộng", description: "Phát triển mảng nội dung số và YouTube" },
-    { year: "2021", title: "400 triệu views", description: "Cột mốc 400 triệu lượt xem trên YouTube" },
-    { year: "2024", title: "Triển lãm ảo", description: "Ra mắt dịch vụ triển lãm ảo 3D" },
+    { year: "2013", title: "Khởi đầu", description: "Bắt đầu với năng lực sản xuất phim chuyên nghiệp chuẩn điện ảnh" },
+    { year: "2018", title: "Bứt phá số", description: "Chinh phục công chúng trên hệ sinh thái số" },
+    { year: "Hiện tại", title: "Agency toàn diện", description: "Trở thành Agency chiến lược & công nghệ truyền thông toàn diện" },
   ],
   culture:
     "Tại CD Media, chúng tôi xây dựng môi trường làm việc sáng tạo, cởi mở và đầy cảm hứng. Mỗi thành viên đều được khuyến khích thể hiện cá tính và đóng góp ý tưởng.",

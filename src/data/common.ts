@@ -1,8 +1,9 @@
+// Số liệu thật từ tài liệu khách hàng (PDF Figma — trang chủ)
 export const stats = [
-  { value: 400, suffix: " triệu", label: "Lượt xem YouTube" },
-  { value: 2, suffix: " triệu", label: "Người theo dõi YouTube" },
-  { value: 50, suffix: " triệu", label: "Lượt xem Facebook" },
-  { value: 240, suffix: "K+", label: "Followers Facebook" },
+  { value: 13, suffix: "+", label: "Năm kinh nghiệm sản xuất phim từ 2013" },
+  { value: 2.6, suffix: "M+", decimals: 1, label: "Người theo dõi đa nền tảng số" },
+  { value: 1, suffix: "B+", label: "Lượt xem tích lũy trên cộng đồng" },
+  { value: 100, suffix: "%", label: "Cam kết KPI hiệu quả chiến dịch" },
 ];
 
 export const testimonials = [
@@ -46,7 +47,7 @@ export const companyInfo = {
   address: "56 16A-18B, Ngõ 140 Khuất Duy Tiến, Thanh Xuân, TP. Hà Nội",
   taxCode: "0110455578",
   workingHours: "Thứ 2 - Thứ 6: 8:30 - 18:00 | Thứ 7: 9:00 - 12:00",
-  founded: 2021,
+  founded: 2013,
   social: {
     facebook: "https://www.facebook.com/cdmediavietnam",
     tiktok: "https://www.tiktok.com/@cdmediaofficial",

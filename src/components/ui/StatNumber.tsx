@@ -7,10 +7,11 @@ interface StatNumberProps {
   value: number;
   suffix: string;
   label: string;
+  decimals?: number;
   delay?: number;
 }
 
-export default function StatNumber({ value, suffix, label, delay = 0 }: StatNumberProps) {
+export default function StatNumber({ value, suffix, label, decimals = 0, delay = 0 }: StatNumberProps) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -39,12 +40,14 @@ export default function StatNumber({ value, suffix, label, delay = 0 }: StatNumb
           setCount(value);
           clearInterval(interval);
         } else {
-          setCount(Math.floor(current));
+          setCount(current);
         }
       }, duration / steps);
     }, delay);
     return () => clearTimeout(timer);
   }, [isVisible, value, delay]);
+
+  const display = decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toString();
 
   return (
     <motion.div
@@ -57,7 +60,7 @@ export default function StatNumber({ value, suffix, label, delay = 0 }: StatNumb
     >
       <div className="text-4xl md:text-5xl font-bold text-white mb-2">
         <span className="bg-gradient-to-r from-[#E50914] to-[#FF6B6B] bg-clip-text text-transparent">
-          {count}{suffix}
+          {display}{suffix}
         </span>
       </div>
       <p className="text-[#A1A1AA] text-sm">{label}</p>
