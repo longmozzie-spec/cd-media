@@ -21,6 +21,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const article = news.find((n) => n.slug === slug);
   if (!article) notFound();
-  const related = news.filter((n) => n.slug !== slug && n.category === article.category).slice(0, 2);
+  const sameCategory = news.filter((n) => n.slug !== slug && n.category === article.category);
+  const others = news.filter((n) => n.slug !== slug && n.category !== article.category);
+  const related = [...sameCategory, ...others].slice(0, 3);
   return <NewsDetailClient article={article} related={related} />;
 }

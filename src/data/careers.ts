@@ -4,6 +4,8 @@ export interface Career {
   type: "Full-time" | "Part-time" | "Intern";
   location: string;
   department: string;
+  salary: string;
+  deadline: string;
   description: string;
   responsibilities: string[];
   requirements: string[];
@@ -25,6 +27,8 @@ export const careers: Career[] = [
     type: "Full-time",
     location: "Hà Nội",
     department: "Content & Research",
+    salary: "10 - 18 triệu",
+    deadline: "2026-08-31",
     description: "Nghiên cứu chuyên sâu và viết kịch bản cho các kênh YouTube (quân sự, khoa học, lịch sử) và phim tài liệu.",
     responsibilities: [
       "Nghiên cứu đề tài chuyên sâu: quân sự, địa chính trị, lịch sử, khoa học",
@@ -54,6 +58,8 @@ export const careers: Career[] = [
     type: "Full-time",
     location: "Hà Nội",
     department: "Post-production Team",
+    salary: "10 - 18 triệu",
+    deadline: "2026-08-31",
     description: "Dựng phim cho các kênh YouTube CD Media và phim tài liệu. Làm việc với Premiere Pro, After Effects, DaVinci Resolve.",
     responsibilities: [
       "Dựng video YouTube theo kịch bản (quân sự, khám phá, du lịch)",
@@ -83,6 +89,8 @@ export const careers: Career[] = [
     type: "Full-time",
     location: "Hà Nội",
     department: "Post-production Team",
+    salary: "12 - 20 triệu",
+    deadline: "2026-08-31",
     description: "Thiết kế đồ họa chuyển động, infographic video và hiệu ứng hình ảnh cho nội dung YouTube và phim tài liệu.",
     responsibilities: [
       "Thiết kế motion graphics minh hoạ cho video quân sự, khoa học",
@@ -112,6 +120,8 @@ export const careers: Career[] = [
     type: "Full-time",
     location: "Hà Nội",
     department: "Production Team",
+    salary: "10 - 16 triệu",
+    deadline: "2026-08-31",
     description: "Quay phim cho phim tài liệu, TVC và nội dung đa nền tảng. Đi quay on-location tại nhiều tỉnh thành.",
     responsibilities: [
       "Quay phim tài liệu tại các địa phương",
@@ -141,6 +151,8 @@ export const careers: Career[] = [
     type: "Full-time",
     location: "Hà Nội",
     department: "Digital & Social",
+    salary: "9 - 15 triệu",
+    deadline: "2026-08-31",
     description: "Quản lý và phát triển hệ thống kênh YouTube, Facebook của CD Media — tối ưu SEO, lên lịch đăng, phân tích data.",
     responsibilities: [
       "Quản lý lịch đăng tải trên YouTube và Facebook",
@@ -170,6 +182,8 @@ export const careers: Career[] = [
     type: "Intern",
     location: "Hà Nội",
     department: "Content & Research",
+    salary: "3 - 5 triệu",
+    deadline: "2026-08-31",
     description: "Thực tập nghiên cứu và hỗ trợ sản xuất nội dung cho hệ thống kênh YouTube CD Media.",
     responsibilities: [
       "Hỗ trợ research đề tài cho video",

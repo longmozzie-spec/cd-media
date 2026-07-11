@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MapPin, Clock, ArrowRight } from "lucide-react";
+import { MapPin, CalendarClock, Wallet, ArrowRight } from "lucide-react";
 import { Career } from "@/data/careers";
 
 export default function CareerCard({ career, index = 0 }: { career: Career; index?: number }) {
@@ -33,13 +33,18 @@ export default function CareerCard({ career, index = 0 }: { career: Career; inde
             </span>
           </div>
           <p className="text-[#A1A1AA] text-sm mb-4 line-clamp-2">{career.description}</p>
-          <div className="flex items-center gap-4 text-[#A1A1AA]/70 text-xs mb-4">
-            <span className="flex items-center gap-1">
-              <MapPin size={14} /> {career.location}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock size={14} /> {career.type}
-            </span>
+          <div className="space-y-2 text-sm mb-4">
+            <div className="flex items-center gap-2 text-[#A1A1AA]">
+              <Wallet size={15} className="text-[#E50914] shrink-0" />
+              <span>Mức thu nhập: <span className="text-white font-medium">{career.salary}</span></span>
+            </div>
+            <div className="flex items-center gap-2 text-[#A1A1AA]">
+              <CalendarClock size={15} className="text-[#E50914] shrink-0" />
+              <span>Hạn nộp: {new Date(career.deadline).toLocaleDateString("vi-VN")}</span>
+            </div>
+            <div className="flex items-center gap-2 text-[#A1A1AA]/70">
+              <MapPin size={15} className="shrink-0" /> {career.location}
+            </div>
           </div>
           <span className="inline-flex items-center gap-1 text-[#E50914] text-sm font-medium group-hover:gap-2 transition-all">
             Xem chi tiết <ArrowRight size={14} />
