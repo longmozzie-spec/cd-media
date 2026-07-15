@@ -4,7 +4,7 @@ export interface Project {
   client: string;
   category: string;
   // Phân loại theo tài liệu khách hàng (PDF Figma — trang Dự án)
-  clientType: "Tập đoàn" | "Doanh nghiệp" | "Cơ quan nhà nước" | "Nội dung số";
+  clientType: "Tập đoàn" | "Doanh nghiệp" | "Cơ quan nhà nước" | "Đào tạo & Sự kiện" | "Nội dung số";
   industry: string;
   thumbnail: string;
   description: string;
@@ -17,12 +17,13 @@ export interface Project {
   videoId?: string;
 }
 
-// Filter theo tài liệu khách hàng (PDF Figma — trang Dự án)
+// Filter theo tài liệu khách hàng (HTML mockup — trang Dự án)
 export const projectCategories = [
   "Tất cả",
   "Tập đoàn",
   "Doanh nghiệp",
   "Cơ quan nhà nước",
+  "Đào tạo & Sự kiện",
   "Nội dung số",
 ];
 
