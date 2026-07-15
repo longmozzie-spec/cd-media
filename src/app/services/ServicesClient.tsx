@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import NewsCard from "@/components/ui/NewsCard";
 import ContactForm from "@/components/ui/ContactForm";
+import FallbackImage from "@/components/ui/FallbackImage";
 import { servicePillars } from "@/data/services";
 import { news } from "@/data/news";
 
@@ -92,9 +93,9 @@ export default function ServicesClient() {
                     )}
                   </div>
                 </div>
-                {/* Ảnh placeholder — TODO: Client content required (ảnh dự án minh hoạ) */}
-                <div className={`aspect-video rounded-xl border border-[#27272A] bg-gradient-to-br from-[#1A1A1E] to-[#27272A] flex items-center justify-center ${reversed ? "lg:order-1" : ""}`}>
-                  <span className="text-[#A1A1AA]/40 text-xs uppercase tracking-widest font-mono">[ Ảnh {pillar.title} ]</span>
+                {/* Ảnh minh hoạ — bỏ file vào /public/services/{key}.jpg */}
+                <div className={`aspect-video rounded-xl border border-[#27272A] overflow-hidden ${reversed ? "lg:order-1" : ""}`}>
+                  <FallbackImage src={pillar.image} alt={pillar.title} placeholder={`[ Ảnh ${pillar.title} ] → /public${pillar.image}`} />
                 </div>
               </div>
               {/* Grid dịch vụ con */}

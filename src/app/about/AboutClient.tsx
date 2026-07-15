@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Target, Link2, BarChart3, Tv, Landmark, Clapperboard, Globe, Bot, GraduationCap, ArrowRight } from "lucide-react";
 import CTASection from "@/components/ui/CTASection";
+import FallbackImage from "@/components/ui/FallbackImage";
 
 // Timeline "Câu chuyện CD Media" — khung + mốc theo ve-cd-media.html
 const timeline = [
@@ -21,10 +22,10 @@ const values = [
 
 // TODO: Client content required — tên & ảnh thành viên thật. Ảnh đặt tại /public/team/.
 const team = [
-  { name: "Thành viên 1", role: "CEO & Founder" },
-  { name: "Thành viên 2", role: "Production Director" },
-  { name: "Thành viên 3", role: "Marketing Director" },
-  { name: "Thành viên 4", role: "Content Strategist" },
+  { name: "Thành viên 1", role: "CEO & Founder", photo: "/team/member-1.jpg" },
+  { name: "Thành viên 2", role: "Production Director", photo: "/team/member-2.jpg" },
+  { name: "Thành viên 3", role: "Marketing Director", photo: "/team/member-3.jpg" },
+  { name: "Thành viên 4", role: "Content Strategist", photo: "/team/member-4.jpg" },
 ];
 
 const achievements = [
@@ -94,9 +95,9 @@ export default function AboutClient() {
                 ))}
               </div>
             </div>
-            {/* Ảnh — TODO: Client content required, đặt tại /public/team/ */}
-            <div className="aspect-[4/5] rounded-xl border border-[#27272A] overflow-hidden bg-gradient-to-br from-[#1A1A1E] to-[#27272A] flex items-center justify-center">
-              <span className="text-[#A1A1AA]/40 text-xs uppercase tracking-widest font-mono">[ Ảnh đội ngũ / văn phòng ]</span>
+            {/* Ảnh câu chuyện — bỏ file vào /public/team/story.jpg */}
+            <div className="aspect-[4/5] rounded-xl border border-[#27272A] overflow-hidden">
+              <FallbackImage src="/team/story.jpg" alt="Đội ngũ CD Media" placeholder="[ Ảnh đội ngũ / văn phòng ] → /public/team/story.jpg" />
             </div>
           </div>
         </div>
@@ -138,8 +139,8 @@ export default function AboutClient() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {team.map((m) => (
               <div key={m.role} className="rounded-xl border border-[#27272A] overflow-hidden text-center bg-[#1A1A1E]">
-                <div className="aspect-square bg-gradient-to-br from-[#1A1A1E] to-[#27272A] flex items-center justify-center">
-                  <span className="text-[#A1A1AA]/40 text-xs uppercase tracking-widest font-mono">Ảnh</span>
+                <div className="aspect-square">
+                  <FallbackImage src={m.photo} alt={m.name} placeholder="Ảnh" />
                 </div>
                 <div className="p-4">
                   <h4 className="text-white font-semibold">{m.name}</h4>

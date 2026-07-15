@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Clapperboard, Rocket, Globe, ArrowRight } from "lucide-react";
 import { careers } from "@/data/careers";
+import FallbackImage from "@/components/ui/FallbackImage";
 
 // "Tại sao chọn CD Media" — khung + nội dung theo tuyen-dung.html
 const whyItems = [
@@ -43,9 +44,9 @@ export default function CareersClient() {
             Tại sao CD Media?
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Ảnh — TODO: Client content required (ảnh văn hóa/đội ngũ), đặt tại /public/team/ */}
-            <div className="aspect-[4/3] rounded-xl border border-[#27272A] bg-gradient-to-br from-[#1A1A1E] to-[#27272A] flex items-center justify-center">
-              <span className="text-[#A1A1AA]/40 text-xs uppercase tracking-widest font-mono">[ Ảnh văn hóa / đội ngũ ]</span>
+            {/* Ảnh văn hóa/đội ngũ — bỏ file vào /public/team/culture.jpg */}
+            <div className="aspect-[4/3] rounded-xl border border-[#27272A] overflow-hidden">
+              <FallbackImage src="/team/culture.jpg" alt="Văn hóa CD Media" placeholder="[ Ảnh văn hóa / đội ngũ ] → /public/team/culture.jpg" />
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight mb-8">

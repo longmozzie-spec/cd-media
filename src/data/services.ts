@@ -13,6 +13,7 @@ export interface ServicePillar {
   title: string;
   tagline: string;
   description: string;
+  image: string;
   items: ServiceItem[];
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
@@ -23,6 +24,7 @@ export const servicePillars: ServicePillar[] = [
     key: "san-xuat-media",
     title: "Sản xuất Media",
     tagline: "Chuẩn điện ảnh",
+    image: "/services/san-xuat-media.jpg",
     description:
       "Giải bài toán hình ảnh cao cấp bằng tư duy chiến lược và quy trình sản xuất khép kín.",
     items: [
@@ -39,6 +41,7 @@ export const servicePillars: ServicePillar[] = [
     key: "giai-phap-truyen-thong",
     title: "Giải pháp truyền thông",
     tagline: "Tư vấn chiến lược",
+    image: "/services/giai-phap-truyen-thong.jpg",
     description:
       "Tư vấn chiến lược và triển khai truyền thông tổng thể cho thương hiệu.",
     items: [
@@ -52,6 +55,7 @@ export const servicePillars: ServicePillar[] = [
     key: "marketing-tong-the",
     title: "Marketing tổng thể",
     tagline: "Doanh thu thật",
+    image: "/services/marketing-tong-the.jpg",
     description:
       "Dành cho doanh nghiệp SME & Startup muốn marketing tạo ra doanh thu thật — không phải báo cáo đẹp. CD Media thiết kế chiến lược, sản xuất nội dung và đo kết quả bằng số liệu thực tế.",
     items: [
@@ -66,6 +70,7 @@ export const servicePillars: ServicePillar[] = [
     key: "dao-tao-chuyen-giao",
     title: "Đào tạo & Chuyển giao",
     tagline: "Kỹ năng + Chiến lược",
+    image: "/services/dao-tao-chuyen-giao.jpg",
     description:
       "CD Media đào tạo hai thứ mà hầu hết khóa học không dạy cùng lúc: kỹ năng sản xuất nội dung chuẩn chỉnh và chiến lược phân phối đúng tệp, đúng thời điểm.",
     items: [

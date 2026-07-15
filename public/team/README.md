@@ -1,11 +1,22 @@
-# Ảnh đội ngũ / văn hóa công ty
+# Ảnh đội ngũ / văn hóa (trang Về CD Media + Tuyển dụng)
 
-Đặt ảnh đội ngũ, hậu trường, văn hóa công ty tại đây để dùng cho trang "Về CD Media".
+Bỏ ảnh vào đây ĐÚNG TÊN FILE dưới đây thì web tự hiển thị (không cần sửa code).
+Nếu chưa có ảnh, web hiện khung xám placeholder — không lỗi.
 
-Ví dụ:
+## Trang "Về CD Media" (/about)
 
-    /team/team-1.jpg
-    /team/hau-truong-1.jpg
+- `story.jpg`     → Ảnh đội ngũ / văn phòng lớn (khung dọc 4:5, nên ~800×1000px)
+- `member-1.jpg`  → Ảnh thành viên 1 — CEO & Founder (vuông 1:1, ~600×600px)
+- `member-2.jpg`  → Ảnh thành viên 2 — Production Director (vuông)
+- `member-3.jpg`  → Ảnh thành viên 3 — Marketing Director (vuông)
+- `member-4.jpg`  → Ảnh thành viên 4 — Content Strategist (vuông)
 
-Sau đó khai báo trong trang admin (mục "Về CD Media" → "Ảnh đội ngũ")
-hoặc trực tiếp trong: src/app/about/AboutClient.tsx
+## Trang "Tuyển dụng" (/careers)
+
+- `culture.jpg`   → Ảnh văn hóa / đội ngũ (ngang 4:3, ~1000×750px)
+
+---
+Ghi chú:
+- Tên & chức danh thành viên hiện là "Thành viên 1..4" — sửa trong
+  src/app/about/AboutClient.tsx (mảng `team`) khi có tên thật.
+- Định dạng .jpg/.png/.webp đều được, nhưng phải đúng TÊN file ở trên.
