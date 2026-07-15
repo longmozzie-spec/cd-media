@@ -42,10 +42,9 @@ export const servicePillars: ServicePillar[] = [
     description:
       "Tư vấn chiến lược và triển khai truyền thông tổng thể cho thương hiệu.",
     items: [
-      // TODO: Client content required — bổ sung các gói giải pháp truyền thông cụ thể.
-      { title: "Chiến lược truyền thông", description: "Xây dựng định vị thương hiệu, thông điệp cốt lõi và kế hoạch truyền thông tổng thể.", icon: "Compass" },
-      { title: "Quản trị kênh & cộng đồng", description: "Vận hành fanpage, kênh YouTube/TikTok và quản lý cộng đồng người theo dõi.", icon: "Users" },
-      { title: "Xử lý khủng hoảng truyền thông", description: "Tư vấn và đồng hành xử lý các tình huống truyền thông nhạy cảm. (Nội dung chi tiết sẽ bổ sung.)", icon: "ShieldAlert" },
+      { title: "Chiến lược thương hiệu", description: "Định vị, messaging, brand identity — xây dựng nền tảng thương hiệu bền vững trước khi làm bất cứ thứ gì khác.", icon: "Compass" },
+      { title: "Truyền thông tích hợp (IMC)", description: "Kế hoạch truyền thông đa kênh: PR, digital, events, social — tất cả phục vụ một mục tiêu duy nhất.", icon: "Megaphone" },
+      { title: "PR & Media Relations", description: "Quan hệ báo chí, quản lý khủng hoảng truyền thông và xây dựng uy tín thương hiệu trên truyền thông đại chúng.", icon: "Newspaper" },
     ],
     primaryCta: { label: "Xem dự án thực tế", href: "/projects" },
   },
@@ -56,12 +55,12 @@ export const servicePillars: ServicePillar[] = [
     description:
       "Dành cho doanh nghiệp SME & Startup muốn marketing tạo ra doanh thu thật — không phải báo cáo đẹp. CD Media thiết kế chiến lược, sản xuất nội dung và đo kết quả bằng số liệu thực tế.",
     items: [
-      { title: "Chiến lược trước", description: "Chẩn đoán thương hiệu, xác định positioning và tệp khách hàng mục tiêu.", icon: "Search" },
-      { title: "Sản xuất sau", description: "Triển khai nội dung chuẩn chỉnh theo chiến lược đã thống nhất.", icon: "Clapperboard" },
-      { title: "Đo lường xuyên suốt", description: "Theo dõi số liệu thực tế, báo cáo minh bạch và tối ưu liên tục theo kết quả kinh doanh.", icon: "LineChart" },
+      { title: "Performance Marketing", description: "Facebook Ads, Google Ads, TikTok Ads — tối ưu theo conversion thật, báo cáo minh bạch từng đồng.", icon: "BarChart3" },
+      { title: "Content Marketing", description: "Chiến lược nội dung, lịch đăng bài, copywriting — xây dựng kênh có giá trị lâu dài.", icon: "PenLine" },
+      { title: "Growth Marketing", description: "Tối ưu phễu chuyển đổi, A/B testing, growth hacking phù hợp với giai đoạn và ngân sách của doanh nghiệp.", icon: "TrendingUp" },
     ],
-    primaryCta: { label: "Xem chi tiết", href: "/services/marketing-tong-the" },
-    secondaryCta: { label: "Nhận tư vấn miễn phí", href: "/contact" },
+    primaryCta: { label: "Nhận tư vấn miễn phí", href: "/contact" },
+    secondaryCta: { label: "Xem chi tiết Marketing tổng thể", href: "/services/marketing-tong-the" },
   },
   {
     key: "dao-tao-chuyen-giao",
@@ -70,13 +69,12 @@ export const servicePillars: ServicePillar[] = [
     description:
       "CD Media đào tạo hai thứ mà hầu hết khóa học không dạy cùng lúc: kỹ năng sản xuất nội dung chuẩn chỉnh và chiến lược phân phối đúng tệp, đúng thời điểm.",
     items: [
-      // TODO: Client content required — bổ sung chương trình đào tạo chi tiết & học phí.
-      { title: "Đào tạo đại chúng (100–500 người)", description: "Chương trình đào tạo quy mô lớn về sản xuất nội dung và truyền thông số.", icon: "GraduationCap" },
-      { title: "Đào tạo chuyên sâu", description: "Đào tạo cá nhân & doanh nghiệp theo nhu cầu chuyên biệt.", icon: "UserCog" },
-      { title: "Chuyển giao quy trình", description: "Chuyển giao quy trình sản xuất và vận hành nội dung cho đội ngũ nội bộ của doanh nghiệp.", icon: "Repeat" },
+      { title: "Workshop & Seminar", description: "Sự kiện đào tạo quy mô lớn 300–500 người — kiến thức thực chiến từ người đang làm, format tương tác cao.", icon: "Mic" },
+      { title: "Media Creator 1-on-1", description: "Đào tạo cá nhân: kịch bản video, phân phối đa nền tảng, monetize và xây personal brand.", icon: "UserCog" },
+      { title: "In-house Media Team", description: "Xây năng lực nội dung nội bộ cho doanh nghiệp — đào tạo trực tiếp trên dự án thật của công ty.", icon: "Building2" },
     ],
-    primaryCta: { label: "Xem dự án thực tế", href: "/projects" },
-    secondaryCta: { label: "Nhận tư vấn miễn phí", href: "/contact" },
+    primaryCta: { label: "Nhận tư vấn miễn phí", href: "/contact" },
+    secondaryCta: { label: "Xem dự án", href: "/projects" },
   },
 ];
 
