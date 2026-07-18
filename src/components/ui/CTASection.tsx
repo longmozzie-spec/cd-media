@@ -12,7 +12,7 @@ interface CTASectionProps {
 
 export default function CTASection({ title, description, buttonText, buttonHref }: CTASectionProps) {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" data-theme-locked="true">
       <div className="absolute inset-0 bg-gradient-to-r from-[#121214] via-[#1A1A1E] to-[#121214]" />
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/3 w-72 h-72 bg-[#E50914]/10 rounded-full blur-3xl" />

@@ -100,6 +100,13 @@ html {
   color: #0F0F11 !important;
 }
 
+/* Sections có nền tối cố định — giữ chữ trắng, không đổi theo light mode */
+[data-theme="light"] [data-theme-locked="true"] .text-white { color: #FFFFFF !important; }
+[data-theme="light"] [data-theme-locked="true"] h1 { color: #FFFFFF !important; }
+[data-theme="light"] [data-theme-locked="true"] h2 { color: #FFFFFF !important; }
+[data-theme="light"] [data-theme-locked="true"] h3 { color: #FFFFFF !important; }
+[data-theme="light"] [data-theme-locked="true"] .text-\[\#A1A1AA\] { color: #A1A1AA !important; }
+
 /* Smooth transition for theme switch */
 body,
 body * {

@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO: 2 cột + showreel + stats bar đáy ── */}
-      <section className="relative min-h-screen flex flex-col overflow-hidden pt-16 lg:pt-20">
+      <section className="relative min-h-screen flex flex-col overflow-hidden pt-16 lg:pt-20" data-theme-locked="true">
         <div className="absolute inset-0 z-0">
           <img src="/hero-bg.png" alt="" className="w-full h-full object-cover" style={{ objectPosition: "center 30%" }} />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F0F11]/95 via-[#0F0F11]/80 to-[#0F0F11]/30" />
