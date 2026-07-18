@@ -57,8 +57,7 @@ export default function HomePage() {
               CD Media — Agency Truyền Thông
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-5">
-              Truyền thông chiến lược &amp; <br className="hidden md:block" />
-              sản xuất media <span className="text-[#E50914]">thực chiến</span>
+              Truyền thông chiến lược &amp; sản xuất media <span className="text-[#E50914]">thực chiến</span>
             </h1>
             <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed max-w-md mb-10">
               Đối tác truyền thông toàn diện của Doanh nghiệp và Tổ chức — từ chiến lược đến sản xuất,
