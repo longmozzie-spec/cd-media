@@ -35,7 +35,7 @@ export const servicePillars: ServicePillar[] = [
       { title: "Content đa nền tảng", description: "Sáng tạo nội dung cho YouTube, Facebook, TikTok theo chiến lược và xu hướng.", icon: "Smartphone" },
       { title: "Triển lãm ảo", description: "Thiết kế và sản xuất triển lãm ảo (virtual exhibition) tương tác, trải nghiệm 360°.", icon: "Monitor" },
     ],
-    primaryCta: { label: "Xem dự án thực tế", href: "/projects" },
+    primaryCta: { label: "Xem chi tiết →", href: "/services/san-xuat-media" },
   },
   {
     key: "giai-phap-truyen-thong",
@@ -49,7 +49,7 @@ export const servicePillars: ServicePillar[] = [
       { title: "Truyền thông tích hợp (IMC)", description: "Kế hoạch truyền thông đa kênh: PR, digital, events, social — tất cả phục vụ một mục tiêu duy nhất.", icon: "Megaphone" },
       { title: "PR & Media Relations", description: "Quan hệ báo chí, quản lý khủng hoảng truyền thông và xây dựng uy tín thương hiệu trên truyền thông đại chúng.", icon: "Newspaper" },
     ],
-    primaryCta: { label: "Xem dự án thực tế", href: "/projects" },
+    primaryCta: { label: "Xem chi tiết →", href: "/services/truyen-thong" },
   },
   {
     key: "marketing-tong-the",
@@ -63,8 +63,8 @@ export const servicePillars: ServicePillar[] = [
       { title: "Content Marketing", description: "Chiến lược nội dung, lịch đăng bài, copywriting — xây dựng kênh có giá trị lâu dài.", icon: "PenLine" },
       { title: "Growth Marketing", description: "Tối ưu phễu chuyển đổi, A/B testing, growth hacking phù hợp với giai đoạn và ngân sách của doanh nghiệp.", icon: "TrendingUp" },
     ],
-    primaryCta: { label: "Nhận tư vấn miễn phí", href: "/contact" },
-    secondaryCta: { label: "Xem chi tiết Marketing tổng thể", href: "/services/marketing-tong-the" },
+    primaryCta: { label: "Xem chi tiết →", href: "/services/marketing-tong-the" },
+    secondaryCta: { label: "Nhận tư vấn miễn phí", href: "/contact" },
   },
   {
     key: "dao-tao-chuyen-giao",

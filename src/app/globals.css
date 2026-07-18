@@ -17,6 +17,7 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -28,11 +29,88 @@ html {
   color: white;
 }
 
+/* ── LIGHT MODE ─────────────────────────────── */
+[data-theme="light"] {
+  --color-background: #F8F8FA;
+  --color-foreground: #0F0F11;
+  --color-surface:    #F0F0F4;
+  --color-card:       #FFFFFF;
+  --color-border:     #E4E4E7;
+  --color-muted:      #6B7280;
+}
+
+/* Direct overrides — bắt buộc vì Tailwind 4 compile static values */
+[data-theme="light"] body {
+  background-color: #F8F8FA !important;
+  color: #0F0F11 !important;
+}
+
+/* Light mode: dark bg classes → light equivalents */
+[data-theme="light"] .bg-\[\#0F0F11\],
+[data-theme="light"] .bg-\[\#0A0A0C\] {
+  background-color: #F8F8FA !important;
+}
+[data-theme="light"] .bg-\[\#121214\] {
+  background-color: #F0F0F4 !important;
+}
+[data-theme="light"] .bg-\[\#1A1A1E\] {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .bg-\[\#27272A\] {
+  background-color: #FFFFFF !important;
+}
+
+/* gradient from/via dark → light */
+[data-theme="light"] .from-\[\#0F0F11\] { --tw-gradient-from: #F8F8FA var(--tw-gradient-from-position) !important; }
+[data-theme="light"] .via-\[\#0F0F11\]  { --tw-gradient-via:  #F8F8FA var(--tw-gradient-via-position) !important; }
+[data-theme="light"] .from-\[\#121214\] { --tw-gradient-from: #F0F0F4 var(--tw-gradient-from-position) !important; }
+[data-theme="light"] .via-\[\#121214\]  { --tw-gradient-via:  #F0F0F4 var(--tw-gradient-via-position) !important; }
+[data-theme="light"] .from-\[\#1A1A1E\] { --tw-gradient-from: #FFFFFF var(--tw-gradient-from-position) !important; }
+[data-theme="light"] .to-\[\#27272A\]   { --tw-gradient-to:   #E4E4E7 var(--tw-gradient-to-position) !important; }
+[data-theme="light"] .to-\[\#121214\]   { --tw-gradient-to:   #F0F0F4 var(--tw-gradient-to-position) !important; }
+
+/* Text */
+[data-theme="light"] .text-white { color: #0F0F11 !important; }
+[data-theme="light"] .text-\[\#A1A1AA\] { color: #6B7280 !important; }
+[data-theme="light"] .text-\[\#A1A1AA\]\/70 { color: rgba(107,114,128,0.7) !important; }
+[data-theme="light"] .text-\[\#A1A1AA\]\/40 { color: rgba(107,114,128,0.55) !important; }
+
+/* Borders */
+[data-theme="light"] .border-\[\#27272A\] { border-color: #E4E4E7 !important; }
+
+/* Header */
+[data-theme="light"] header {
+  background-color: rgba(248,248,250,0.92) !important;
+  border-bottom-color: #E4E4E7 !important;
+}
+[data-theme="light"] header.bg-white\/95 {
+  background-color: rgba(255,255,255,0.97) !important;
+}
+
+/* Footer */
+[data-theme="light"] footer { background-color: #F0F0F4 !important; border-color: #E4E4E7 !important; }
+
+/* Forms */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background-color: #FFFFFF !important;
+  border-color: #E4E4E7 !important;
+  color: #0F0F11 !important;
+}
+
+/* Smooth transition for theme switch */
+body,
+body * {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
 /* Tôn trọng người dùng tắt hiệu ứng chuyển động */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
   *,
   *::before,
   *::after {

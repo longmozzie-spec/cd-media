@@ -9,10 +9,14 @@ export interface NewsArticle {
   featured: boolean;
 }
 
-// Filter theo danh mục nội dung thật (kênh CD Media - Why?)
+// Filter theo sitemap v2: tri thức đại chúng + góc nhìn truyền thông (B2B)
 export const newsCategories = [
   "Tất cả",
+  "Quân sự",
   "Why?",
+  "Khám phá",
+  "Travel",
+  "Góc nhìn truyền thông",
 ];
 
 // Nội dung lấy từ kênh CD Media - Why? (cdmedia.vn/why)
