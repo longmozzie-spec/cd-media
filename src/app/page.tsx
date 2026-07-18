@@ -7,10 +7,24 @@ import StatNumber from "@/components/ui/StatNumber";
 import ProjectCard from "@/components/ui/ProjectCard";
 import NewsCard from "@/components/ui/NewsCard";
 import CTASection from "@/components/ui/CTASection";
+import FallbackImage from "@/components/ui/FallbackImage";
 import { stats } from "@/data/common";
 import { projects } from "@/data/projects";
 import { news } from "@/data/news";
 
+// Logo đối tác — khớp với file HTML tham chiếu + ảnh đã có trong /public/partners/
+const partners = [
+  { name: "VTV", logo: "/partners/vtv.png" },
+  { name: "Viettel", logo: "/partners/viettel.png" },
+  { name: "Sun Group", logo: "/partners/sun group.png" },
+  { name: "Eurowindow", logo: "/partners/Euro Window.png" },
+  { name: "AZ Vietnam", logo: "/partners/AZ.png" },
+  { name: "30Shine", logo: "/partners/30shine.png" },
+  { name: "Helios", logo: "/partners/helios.png" },
+  { name: "Dolphin Media", logo: "/partners/Dolphin media.png" },
+  { name: "ELSA", logo: "/partners/elsa.png" },
+  { name: "Kiên Giang", logo: "/partners/kiengiang.png" },
+];
 // 4 trụ cột — hệ sinh thái giải pháp (khung theo cdmedia-homepage.html)
 const solutions = [
   { num: "01", icon: Clapperboard, title: "Sản xuất Media", desc: "Phim tài liệu, TVC, nội dung YouTube, triển lãm ảo — chuẩn chất lượng điện ảnh.", href: "/services#san-xuat-media" },
@@ -183,6 +197,34 @@ export default function HomePage() {
           {latestNews.map((article, i) => (
             <NewsCard key={article.slug} article={article} index={i} />
           ))}
+        </div>
+      </section>
+
+      {/* ── PARTNERS: Khách hàng & Đối tác ── */}
+      <section className="py-16 bg-[#121214] border-t border-b border-[#27272A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 text-[#A1A1AA] text-xs font-medium uppercase tracking-[0.16em] mb-8">
+            Khách hàng & Đối tác
+            <span className="flex-1 h-px bg-[#27272A]" />
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-1 bg-[#27272A] rounded-xl overflow-hidden border border-[#27272A]">
+            {partners.map((p, i) => (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04 }}
+                className="bg-white h-20 flex items-center justify-center p-4 hover:bg-gray-50 transition-colors"
+              >
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  className="max-h-10 max-w-full object-contain"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
