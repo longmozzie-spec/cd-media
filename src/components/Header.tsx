@@ -73,9 +73,14 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
             {navItems.map((item) => (
               item.children ? (
-                <div key={item.href} className="relative">
-                  <button
-                    onClick={() => setOpenDropdown(openDropdown === item.href ? null : item.href)}
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(item.href)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    href={item.href}
                     className={`inline-flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       isActive(item.href)
                         ? "text-[#E50914] bg-[#E50914]/10"
@@ -85,8 +90,18 @@ export default function Header() {
                     }`}
                   >
                     {item.label}
-                    <ChevronDown size={14} className={`transition-transform ${openDropdown === item.href ? "rotate-180" : ""}`} />
-                  </button>
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${openDropdown === item.href ? "rotate-180" : ""}`}
+                      role="button"
+                      aria-label="Mở danh sách giải pháp"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setOpenDropdown(openDropdown === item.href ? null : item.href);
+                      }}
+                    />
+                  </Link>
                   <AnimatePresence>
                     {openDropdown === item.href && (
                       <motion.div
@@ -94,9 +109,9 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 6 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-2 w-52 rounded-xl bg-[#0F0F11] border border-[#27272A] shadow-xl shadow-black/40 overflow-hidden"
+                        className="absolute top-full left-0 pt-2 w-52"
                       >
-                        <div className="py-1.5">
+                        <div className="rounded-xl bg-[#0F0F11] border border-[#27272A] shadow-xl shadow-black/40 overflow-hidden py-1.5">
                           <Link href={item.href} className="block px-4 py-2.5 text-sm text-[#A1A1AA] hover:text-white hover:bg-white/5 transition-colors border-b border-[#27272A]">
                             Tất cả giải pháp
                           </Link>
