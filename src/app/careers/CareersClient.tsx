@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Clapperboard, Rocket, Globe, ArrowRight } from "lucide-react";
-import { careers } from "@/data/careers";
+import { Career } from "@/data/careers";
 import FallbackImage from "@/components/ui/FallbackImage";
 
 // "Tại sao chọn CD Media" — khung + nội dung theo tuyen-dung.html
@@ -13,7 +13,7 @@ const whyItems = [
   { icon: Globe, title: "Hệ sinh thái media mạnh", desc: "Tiếp cận hệ sinh thái 2.6M+ followers và mạng lưới đối tác truyền thông rộng khắp — lợi thế hiếm có." },
 ];
 
-export default function CareersClient() {
+export default function CareersClient({ careers }: { careers: Career[] }) {
   return (
     <>
       {/* Breadcrumb + Page hero */}

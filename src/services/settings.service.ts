@@ -1,8 +1,7 @@
 import { SiteSettings } from "@/types/settings";
+import { getSupabaseBrowser } from "@/lib/supabase/client";
 
-const STORAGE_KEY = "cdmedia_admin_settings";
-
-const defaultSettings: SiteSettings = {
+export const defaultSettings: SiteSettings = {
   companyName: "CD Media",
   fullName: "CÔNG TY CD MEDIA VIỆT NAM",
   tagline: "Kết nối tri thức - Chia sẻ giá trị",
@@ -21,16 +20,32 @@ const defaultSettings: SiteSettings = {
   footerDescription: "Đơn vị truyền thông sáng tạo nội dung đa nền tảng, sản xuất phim tài liệu và triển lãm ảo.",
 };
 
+const ROW_ID = "site";
+
 export const settingsService = {
   async get(): Promise<SiteSettings> {
-    if (typeof window === "undefined") return defaultSettings;
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return defaultSettings;
-    return JSON.parse(raw);
+    try {
+      const supabase = getSupabaseBrowser();
+      const { data, error } = await supabase
+        .from("settings")
+        .select("data")
+        .eq("id", ROW_ID)
+        .maybeSingle();
+      if (error || !data) return defaultSettings;
+      const stored = (data.data ?? {}) as Partial<SiteSettings>;
+      // Merge với default để không thiếu field khi settings mới khởi tạo rỗng
+      return { ...defaultSettings, ...stored };
+    } catch {
+      return defaultSettings;
+    }
   },
 
   async save(settings: SiteSettings): Promise<SiteSettings> {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+    const supabase = getSupabaseBrowser();
+    const { error } = await supabase
+      .from("settings")
+      .upsert({ id: ROW_ID, data: settings });
+    if (error) throw new Error(error.message);
     return settings;
   },
 };

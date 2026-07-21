@@ -17,11 +17,18 @@ export default function DashboardLayout({
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    if (!isAuthenticated()) {
-      router.replace("/admin/login");
-    } else {
-      setChecking(false);
-    }
+    let active = true;
+    isAuthenticated().then((ok) => {
+      if (!active) return;
+      if (!ok) {
+        router.replace("/admin/login");
+      } else {
+        setChecking(false);
+      }
+    });
+    return () => {
+      active = false;
+    };
   }, [router]);
 
   if (checking) {

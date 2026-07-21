@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { login } from "@/lib/admin/auth";
 
 const loginSchema = z.object({
-  username: z.string().min(1, "Vui lòng nhập tên tài khoản"),
+  username: z.string().min(1, "Vui lòng nhập email").email("Email không hợp lệ"),
   password: z.string().min(1, "Vui lòng nhập mật khẩu"),
 });
 
@@ -26,13 +26,14 @@ export default function LoginPage() {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = (data: LoginForm) => {
+  const onSubmit = async (data: LoginForm) => {
     setError("");
-    const success = login(data.username, data.password);
-    if (success) {
+    const result = await login(data.username, data.password);
+    if (result.success) {
       router.push("/admin/dashboard");
+      router.refresh();
     } else {
-      setError("Tên tài khoản hoặc mật khẩu không đúng");
+      setError("Email hoặc mật khẩu không đúng");
     }
   };
 
@@ -53,15 +54,15 @@ export default function LoginPage() {
 
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-slate-700 mb-1.5">
-              Tên tài khoản
+              Email
             </label>
             <input
               id="username"
-              type="text"
+              type="email"
               autoComplete="username"
+              placeholder="admin@cdmedia.vn"
               {...register("username")}
               className="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow"
-              placeholder=""
             />
             {errors.username && (
               <p className="text-red-600 text-xs mt-1">{errors.username.message}</p>

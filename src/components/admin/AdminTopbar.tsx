@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Menu, LogOut, ChevronDown } from "lucide-react";
 import { getSession, logout } from "@/lib/admin/auth";
+import type { AdminUser } from "@/types/admin";
 
 interface AdminTopbarProps {
   onMenuClick: () => void;
@@ -13,7 +14,11 @@ export default function AdminTopbar({ onMenuClick }: AdminTopbarProps) {
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const session = getSession();
+  const [session, setSession] = useState<AdminUser | null>(null);
+
+  useEffect(() => {
+    getSession().then(setSession);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -25,9 +30,10 @@ export default function AdminTopbar({ onMenuClick }: AdminTopbarProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     router.push("/admin/login");
+    router.refresh();
   };
 
   return (

@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import ProjectCard from "@/components/ui/ProjectCard";
 import FilterTabs from "@/components/ui/FilterTabs";
 import TestimonialCard from "@/components/ui/TestimonialCard";
-import { projects, projectCategories } from "@/data/projects";
+import { projectCategories, Project } from "@/data/projects";
 import { testimonials } from "@/data/common";
 
 const partners = [
@@ -37,7 +37,7 @@ function PartnerLogo({ name, logo }: { name: string; logo: string }) {
   return <img src={logo} alt={name} className="max-h-12 max-w-full object-contain" />;
 }
 
-export default function ProjectsClient() {
+export default function ProjectsClient({ projects }: { projects: Project[] }) {
   const [activeFilter, setActiveFilter] = useState("Tất cả");
 
   const filtered = activeFilter === "Tất cả"

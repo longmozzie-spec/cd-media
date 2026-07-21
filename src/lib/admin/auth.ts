@@ -1,49 +1,38 @@
 import { AdminUser } from "@/types/admin";
+import { getSupabaseBrowser } from "@/lib/supabase/client";
 
-const AUTH_KEY = "cdmedia_admin_auth";
+/**
+ * Auth cho admin panel — dùng Supabase Auth (email + password).
+ * Tài khoản admin được tạo trong Supabase Dashboard → Authentication → Users.
+ */
 
-const CREDENTIALS = {
-  username: "cdmedia",
-  password: "123456@Abc",
-  name: "CD Media Admin",
-};
-
-export function login(username: string, password: string): boolean {
-  if (username === CREDENTIALS.username && password === CREDENTIALS.password) {
-    const token = btoa(
-      JSON.stringify({
-        username: CREDENTIALS.username,
-        name: CREDENTIALS.name,
-        exp: Date.now() + 24 * 60 * 60 * 1000,
-      })
-    );
-    localStorage.setItem(AUTH_KEY, token);
-    return true;
-  }
-  return false;
+export async function login(
+  email: string,
+  password: string
+): Promise<{ success: boolean; error?: string }> {
+  const supabase = getSupabaseBrowser();
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return { success: false, error: error.message };
+  return { success: true };
 }
 
-export function getSession(): AdminUser | null {
-  if (typeof window === "undefined") return null;
-  const token = localStorage.getItem(AUTH_KEY);
-  if (!token) return null;
-  try {
-    const data = JSON.parse(atob(token));
-    if (data.exp < Date.now()) {
-      logout();
-      return null;
-    }
-    return { username: data.username, name: data.name };
-  } catch {
-    logout();
-    return null;
-  }
+export async function logout(): Promise<void> {
+  const supabase = getSupabaseBrowser();
+  await supabase.auth.signOut();
 }
 
-export function logout(): void {
-  localStorage.removeItem(AUTH_KEY);
+export async function getSession(): Promise<AdminUser | null> {
+  const supabase = getSupabaseBrowser();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+  return {
+    username: user.email ?? "",
+    name: (user.user_metadata?.name as string) || user.email?.split("@")[0] || "Admin",
+  };
 }
 
-export function isAuthenticated(): boolean {
-  return getSession() !== null;
+export async function isAuthenticated(): Promise<boolean> {
+  return (await getSession()) !== null;
 }

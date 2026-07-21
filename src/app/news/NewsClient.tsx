@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Calendar, ArrowRight } from "lucide-react";
 import NewsCard from "@/components/ui/NewsCard";
 import FilterTabs from "@/components/ui/FilterTabs";
-import { news, newsCategories } from "@/data/news";
+import { newsCategories, NewsArticle } from "@/data/news";
 
-export default function NewsClient() {
+export default function NewsClient({ news }: { news: NewsArticle[] }) {
   const [activeFilter, setActiveFilter] = useState("Tất cả");
 
   const filtered = activeFilter === "Tất cả"

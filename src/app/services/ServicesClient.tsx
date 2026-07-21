@@ -8,7 +8,7 @@ import NewsCard from "@/components/ui/NewsCard";
 import ContactForm from "@/components/ui/ContactForm";
 import FallbackImage from "@/components/ui/FallbackImage";
 import { servicePillars } from "@/data/services";
-import { news } from "@/data/news";
+import { NewsArticle } from "@/data/news";
 
 const eyebrowCls = "flex items-center gap-3 text-[#A1A1AA] text-xs font-medium uppercase tracking-[0.16em] mb-8 after:content-[''] after:flex-1 after:h-px after:bg-[#27272A]";
 
@@ -17,7 +17,7 @@ function Icon({ name, className }: { name: string; className?: string }) {
   return <C className={className} size={22} />;
 }
 
-export default function ServicesClient() {
+export default function ServicesClient({ news }: { news: NewsArticle[] }) {
   const insights = news.slice(0, 3);
 
   return (
