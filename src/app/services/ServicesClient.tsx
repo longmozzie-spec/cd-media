@@ -56,7 +56,7 @@ export default function ServicesClient({ news }: { news: NewsArticle[] }) {
       </div>
 
       {/* Tabs anchor */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sticky top-16 lg:top-20 z-30 bg-[#0F0F11]/90 backdrop-blur-md py-4">
+      <div className="sticky-bar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sticky top-16 lg:top-20 z-30 backdrop-blur-md py-4">
         <nav className="flex flex-wrap gap-2 border-b border-[#27272A] pb-4">
           {servicePillars.map((p, i) => (
             <a key={p.key} href={`#${p.key}`} className="px-3.5 py-2 rounded-lg text-sm font-medium text-[#A1A1AA] hover:text-white hover:bg-[#1A1A1E] transition-all">

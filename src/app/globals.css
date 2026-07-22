@@ -50,6 +50,9 @@ html {
 [data-theme="light"] .bg-\[\#0A0A0C\] {
   background-color: #F8F8FA !important;
 }
+/* Sticky tab bar (nền mờ) — đổi theo theme, tránh escape class phức tạp */
+.sticky-bar { background-color: rgba(15, 15, 17, 0.9); }
+[data-theme="light"] .sticky-bar { background-color: rgba(248, 248, 250, 0.9); }
 [data-theme="light"] .bg-\[\#121214\] {
   background-color: #F0F0F4 !important;
 }
