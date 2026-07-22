@@ -3,21 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 
 const navItems = [
   { label: "Trang chủ", href: "/" },
   { label: "Về CD Media", href: "/about" },
-  {
-    label: "Giải pháp", href: "/services",
-    children: [
-      { label: "Sản xuất Media", href: "/services/san-xuat-media" },
-      { label: "Giải pháp Truyền thông", href: "/services/truyen-thong" },
-      { label: "Marketing Tổng thể", href: "/services/marketing-tong-the" },
-    ],
-  },
+  { label: "Giải pháp", href: "/services" },
   { label: "Dự án", href: "/projects" },
   { label: "Tin tức", href: "/news" },
   { label: "Tuyển dụng", href: "/careers" },
@@ -27,9 +20,7 @@ const navItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const { theme, toggle } = useTheme();
 
   useEffect(() => {
@@ -40,18 +31,7 @@ export default function Header() {
 
   useEffect(() => {
     setIsMobileOpen(false);
-    setOpenDropdown(null);
   }, [pathname]);
-
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, []);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -70,78 +50,21 @@ export default function Header() {
             <img src="/logo.png" alt="CD Media" className="h-12 w-auto brightness-110" />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              item.children ? (
-                <div
-                  key={item.href}
-                  className="relative"
-                  onMouseEnter={() => setOpenDropdown(item.href)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <Link
-                    href={item.href}
-                    className={`inline-flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      isActive(item.href)
-                        ? "text-[#E50914] bg-[#E50914]/10"
-                        : isScrolled
-                          ? "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                          : "text-[#A1A1AA] hover:text-white hover:bg-white/5"
-                    }`}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      size={14}
-                      className={`transition-transform ${openDropdown === item.href ? "rotate-180" : ""}`}
-                      role="button"
-                      aria-label="Mở danh sách giải pháp"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setOpenDropdown(openDropdown === item.href ? null : item.href);
-                      }}
-                    />
-                  </Link>
-                  <AnimatePresence>
-                    {openDropdown === item.href && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 6 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 pt-2 w-52"
-                      >
-                        <div className="rounded-xl bg-[#0F0F11] border border-[#27272A] shadow-xl shadow-black/40 overflow-hidden py-1.5">
-                          <Link href={item.href} className="block px-4 py-2.5 text-sm text-[#A1A1AA] hover:text-white hover:bg-white/5 transition-colors border-b border-[#27272A]">
-                            Tất cả giải pháp
-                          </Link>
-                          {item.children.map((child) => (
-                            <Link key={child.href} href={child.href} className={`block px-4 py-2.5 text-sm transition-colors ${
-                              pathname === child.href ? "text-[#E50914] bg-[#E50914]/10" : "text-[#A1A1AA] hover:text-white hover:bg-white/5"
-                            }`}>
-                              {child.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    isActive(item.href)
-                      ? "text-[#E50914] bg-[#E50914]/10"
-                      : isScrolled
-                        ? "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                        : "text-[#A1A1AA] hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  isActive(item.href)
+                    ? "text-[#E50914] bg-[#E50914]/10"
+                    : isScrolled
+                      ? "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      : "text-[#A1A1AA] hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {item.label}
+              </Link>
             ))}
           </nav>
 
@@ -196,27 +119,15 @@ export default function Header() {
           >
             <nav className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
-                <div key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                      isActive(item.href) ? "text-[#E50914] bg-[#E50914]/10" : "text-[#A1A1AA] hover:text-white hover:bg-white/5"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.children && (
-                    <div className="ml-4 mt-1 space-y-1">
-                      {item.children.map((child) => (
-                        <Link key={child.href} href={child.href} className={`block px-4 py-2 rounded-lg text-xs transition-all ${
-                          pathname === child.href ? "text-[#E50914] bg-[#E50914]/10" : "text-[#A1A1AA]/70 hover:text-white hover:bg-white/5"
-                        }`}>
-                          ↳ {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                    isActive(item.href) ? "text-[#E50914] bg-[#E50914]/10" : "text-[#A1A1AA] hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
               ))}
               <Link href="/contact" className="block mt-4 px-4 py-3 bg-[#E50914] text-white text-sm font-semibold rounded-lg text-center">
                 Liên hệ ngay
