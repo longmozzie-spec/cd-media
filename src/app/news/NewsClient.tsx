@@ -64,7 +64,7 @@ export default function NewsClient({ news }: { news: NewsArticle[] }) {
                 <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="bg-[#1A1A1E] p-8 lg:p-10 flex flex-col justify-center gap-3">
-                <span className="inline-flex w-fit items-center px-2.5 py-1 rounded-sm bg-[#E50914]/[0.12] text-[#E50914] text-[10px] font-mono uppercase tracking-[0.12em]">
+                <span className="inline-flex w-fit items-center px-2.5 py-1 rounded-sm bg-[#A78BFA]/[0.12] text-[#A78BFA] text-[10px] font-mono uppercase tracking-[0.12em]">
                   {featured.category}
                 </span>
                 <span className="flex items-center gap-1.5 text-[#A1A1AA] text-xs">

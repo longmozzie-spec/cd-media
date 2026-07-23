@@ -11,6 +11,8 @@ export interface ServiceItem {
 export interface ServicePillar {
   key: string;
   title: string;
+  /** Phần chữ trong title cần tô đỏ thương hiệu (theo note màu của khách). */
+  titleAccent?: string;
   tagline: string;
   description: string;
   image: string;
@@ -23,6 +25,7 @@ export const servicePillars: ServicePillar[] = [
   {
     key: "san-xuat-media",
     title: "Sản xuất Media",
+    titleAccent: "Media",
     tagline: "Chuẩn điện ảnh",
     image: "/services/san-xuat-media.jpg",
     description:
@@ -40,6 +43,7 @@ export const servicePillars: ServicePillar[] = [
   {
     key: "giai-phap-truyen-thong",
     title: "Giải pháp truyền thông",
+    titleAccent: "truyền thông",
     tagline: "Tư vấn chiến lược",
     image: "/services/giai-phap-truyen-thong.jpg",
     description:
@@ -54,6 +58,7 @@ export const servicePillars: ServicePillar[] = [
   {
     key: "marketing-tong-the",
     title: "Marketing tổng thể",
+    titleAccent: "tổng thể",
     tagline: "Doanh thu thật",
     image: "/services/marketing-tong-the.jpg",
     description:
@@ -69,6 +74,7 @@ export const servicePillars: ServicePillar[] = [
   {
     key: "dao-tao-chuyen-giao",
     title: "Đào tạo & Chuyển giao",
+    titleAccent: "Chuyển giao",
     tagline: "Kỹ năng + Chiến lược",
     image: "/services/dao-tao-chuyen-giao.jpg",
     description:

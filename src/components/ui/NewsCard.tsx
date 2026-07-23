@@ -24,7 +24,7 @@ export default function NewsCard({ article, index = 0 }: { article: NewsArticle;
           </div>
           <div className="p-6">
             <div className="flex items-center gap-3 mb-3">
-              <span className="px-2.5 py-1 rounded-md bg-[#E50914]/10 text-[#E50914] text-xs font-medium">
+              <span className="px-2.5 py-1 rounded-md bg-[#A78BFA]/10 text-[#A78BFA] text-xs font-medium">
                 {article.category}
               </span>
               <span className="flex items-center gap-1 text-[#A1A1AA] text-xs">

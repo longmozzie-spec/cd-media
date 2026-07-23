@@ -84,7 +84,7 @@ export default function NewsDetailClient({ article, related }: { article: NewsAr
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-2 mt-6">
             <span className="text-[#A1A1AA] text-sm">Từ khóa:</span>
-            <span className="px-3 py-1 rounded-full bg-[#E50914]/10 text-[#E50914] text-xs">{article.category}</span>
+            <span className="px-3 py-1 rounded-full bg-[#A78BFA]/10 text-[#A78BFA] text-xs">{article.category}</span>
             <span className="px-3 py-1 rounded-full bg-white/5 text-[#A1A1AA] text-xs">CD Media</span>
           </div>
         </article>

@@ -79,7 +79,15 @@ export default function ServicesClient({ news }: { news: NewsArticle[] }) {
                 <div className={reversed ? "lg:order-2" : ""}>
                   <div className="text-[#E50914] font-mono text-xs tracking-[0.12em] uppercase mb-3">Giải pháp 0{idx + 1}</div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight mb-4">
-                    {pillar.title}
+                    {pillar.titleAccent && pillar.title.includes(pillar.titleAccent) ? (
+                      <>
+                        {pillar.title.split(pillar.titleAccent)[0]}
+                        <span className="text-[#E50914]">{pillar.titleAccent}</span>
+                        {pillar.title.split(pillar.titleAccent)[1]}
+                      </>
+                    ) : (
+                      pillar.title
+                    )}
                   </h2>
                   <p className="text-[#A1A1AA] leading-relaxed mb-6 max-w-md">{pillar.description}</p>
                   <div className="flex flex-wrap gap-3">
