@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import ProjectsClient from "./ProjectsClient";
 import { getProjects } from "@/lib/public-data";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema } from "@/data/schema";
 
 export const metadata: Metadata = {
   title: "Dự Án Truyền Thông & Sản Xuất Media Tiêu Biểu | CD Media",
@@ -12,5 +14,10 @@ export const revalidate = 60;
 
 export default async function ProjectsPage() {
   const projects = await getProjects();
-  return <ProjectsClient projects={projects} />;
+  return (
+    <>
+      <JsonLd data={organizationSchema} />
+      <ProjectsClient projects={projects} />
+    </>
+  );
 }

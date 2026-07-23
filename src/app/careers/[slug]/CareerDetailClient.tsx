@@ -31,7 +31,7 @@ export default function CareerDetailClient({ career }: { career: Career }) {
   const onSubmit = async (values: FormValues) => {
     setSubmitError(null);
     try {
-      // TODO: Client content required — kết nối API/email tuyển dụng thật (doitac@cdmedia.vn).
+      // TODO: Client content required — kết nối API/email tuyển dụng thật (data@cdmedia.vn).
       await contactsService.create({
         name: values.name,
         phone: values.phone,
@@ -41,7 +41,7 @@ export default function CareerDetailClient({ career }: { career: Career }) {
         status: "new",
       });
     } catch {
-      setSubmitError("Không thể gửi hồ sơ lúc này. Vui lòng gửi email tới doitac@cdmedia.vn.");
+      setSubmitError("Không thể gửi hồ sơ lúc này. Vui lòng gửi email tới data@cdmedia.vn.");
     }
   };
 
@@ -96,7 +96,7 @@ export default function CareerDetailClient({ career }: { career: Career }) {
             <ul className="space-y-2.5">
               <li className="flex gap-3 text-[#A1A1AA] leading-relaxed">
                 <span className="text-[#E50914] shrink-0 mt-0.5">→</span>
-                <span>Gửi CV + Portfolio (nếu có) về email: <strong className="text-white">doitac@cdmedia.vn</strong></span>
+                <span>Gửi CV + Portfolio (nếu có) về email: <strong className="text-white">data@cdmedia.vn</strong></span>
               </li>
               <li className="flex gap-3 text-[#A1A1AA] leading-relaxed">
                 <span className="text-[#E50914] shrink-0 mt-0.5">→</span>
@@ -162,7 +162,7 @@ export default function CareerDetailClient({ career }: { career: Career }) {
                   {isSubmitting ? <Loader2 size={16} className="animate-spin" /> : null}
                   {isSubmitting ? "Đang gửi..." : "Nộp hồ sơ ứng tuyển"}
                 </button>
-                <p className="text-[10px] text-[#A1A1AA]/30 text-center leading-relaxed">Hoặc gửi thẳng về doitac@cdmedia.vn</p>
+                <p className="text-[10px] text-[#A1A1AA]/30 text-center leading-relaxed">Hoặc gửi thẳng về data@cdmedia.vn</p>
               </form>
             )}
           </div>

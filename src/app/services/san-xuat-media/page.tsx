@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import SanXuatMediaClient from "./SanXuatMediaClient";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/ui/FaqSection";
+import { faqSchema, breadcrumbSchema } from "@/data/schema";
+import { faqSanXuatMedia } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "Sản Xuất TVC & Phim Doanh Nghiệp Chuẩn Điện Ảnh | CD Media",
@@ -8,5 +12,20 @@ export const metadata: Metadata = {
 };
 
 export default function SanXuatMediaPage() {
-  return <SanXuatMediaClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Trang chủ", path: "/" },
+            { name: "Giải pháp", path: "/services" },
+            { name: "Sản xuất Media", path: "/services/san-xuat-media" },
+          ]),
+          faqSchema(faqSanXuatMedia),
+        ]}
+      />
+      <SanXuatMediaClient />
+      <FaqSection items={faqSanXuatMedia} />
+    </>
+  );
 }

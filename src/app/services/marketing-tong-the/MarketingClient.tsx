@@ -2,8 +2,38 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Check, Target, Clapperboard, LineChart, Search } from "lucide-react";
+import { ArrowRight, Check, Target, Clapperboard, LineChart, Search, BarChart3, PenLine, TrendingUp } from "lucide-react";
 import ContactForm from "@/components/ui/ContactForm";
+
+// 3 mảng chuyên môn marketing (spec 2.0)
+const pillars = [
+  {
+    icon: BarChart3,
+    title: "Performance Marketing",
+    desc: "Facebook Ads, Google Ads, TikTok Ads — tối ưu theo conversion thật, báo cáo minh bạch từng đồng.",
+    metrics: "CPR · ROAS · Tỷ lệ chuyển đổi",
+  },
+  {
+    icon: PenLine,
+    title: "Content Marketing",
+    desc: "Chiến lược nội dung, lịch đăng bài, copywriting — xây dựng kênh có giá trị lâu dài.",
+    metrics: "Reach · Engagement · Traffic",
+  },
+  {
+    icon: TrendingUp,
+    title: "Growth Marketing",
+    desc: "Tối ưu phễu chuyển đổi, A/B testing, growth hacking phù hợp với giai đoạn và ngân sách của doanh nghiệp.",
+    metrics: "CAC · Retention · LTV",
+  },
+];
+
+// Bảng cam kết đo lường — KPI 2 tầng (spec 3.0)
+const kpiRows = [
+  { metric: "Reach & Impressions", commit: "Đảm bảo theo ngân sách media", goal: "Tối đa hóa độ phủ đúng tệp" },
+  { metric: "Engagement rate", commit: "Chuẩn ngành theo từng nền tảng", goal: "Vượt benchmark ngành 15–30%" },
+  { metric: "Chi phí trên mỗi kết quả (CPR)", commit: "Kiểm soát trong ngưỡng cam kết", goal: "Giảm dần qua từng chu kỳ tối ưu" },
+  { metric: "Chuyển đổi & Lead", commit: "Theo dõi & báo cáo minh bạch", goal: "Tăng trưởng theo mục tiêu doanh thu" },
+];
 
 // Số liệu từ tài liệu khách hàng (PDF Figma — trang MKT tổng thể)
 // TODO: Client content required — xác nhận lại các chỉ số này trước khi go-live.
@@ -76,7 +106,7 @@ export default function MarketingClient() {
                 Marketing tổng thể
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Marketing tạo ra <span className="text-[#E50914]">doanh thu thật</span>
+                Marketing Thực Thi — Từ Kế Hoạch Đến <span className="text-[#E50914]">Kết Quả</span>
               </h1>
               <p className="text-lg text-[#A1A1AA] mb-8 leading-relaxed">
                 Dành cho doanh nghiệp SME &amp; Startup muốn marketing tạo ra doanh thu thật — không phải
@@ -129,6 +159,72 @@ export default function MarketingClient() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 2.0 Ba mảng chuyên môn */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-[#E50914] text-sm font-medium uppercase tracking-wider">Ba mảng chuyên môn</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+              CD Media triển khai những mảng marketing nào?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {pillars.map((p, i) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="rounded-2xl bg-[#1A1A1E] border border-[#27272A] p-6 hover:border-[#E50914]/30 transition-all"
+              >
+                <div className="w-11 h-11 rounded-xl bg-[#E50914]/10 flex items-center justify-center mb-4">
+                  <p.icon size={22} className="text-[#E50914]" />
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">{p.title}</h3>
+                <p className="text-[#A1A1AA] text-sm leading-relaxed mb-4">{p.desc}</p>
+                <div className="text-xs text-[#E50914] font-mono tracking-wide border-t border-[#27272A] pt-3">
+                  {p.metrics}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3.0 Cam kết đo lường — KPI 2 tầng */}
+      <section className="py-20 bg-[#121214]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-[#E50914] text-sm font-medium uppercase tracking-wider">Cam kết đo lường</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3">
+              Chúng tôi đo lường điều gì?
+            </h2>
+            <p className="text-[#A1A1AA] mt-4 leading-relaxed">
+              CD Media áp dụng cấu trúc KPI 2 tầng: mức <strong className="text-white">cam kết</strong> (chắc chắn đạt theo
+              ngân sách và ngành hàng) và mức <strong className="text-white">mục tiêu</strong> (phấn đấu tối ưu qua từng chu kỳ).
+            </p>
+          </div>
+          <div className="rounded-2xl bg-[#1A1A1E] border border-[#27272A] overflow-hidden">
+            <div className="grid grid-cols-[1.4fr_1fr_1fr] text-sm">
+              <div className="px-5 py-4 font-semibold text-white bg-white/5 border-b border-[#27272A]">Chỉ số</div>
+              <div className="px-5 py-4 font-semibold text-[#E50914] bg-white/5 border-b border-[#27272A]">Mức cam kết</div>
+              <div className="px-5 py-4 font-semibold text-white/70 bg-white/5 border-b border-[#27272A]">Mức mục tiêu</div>
+              {kpiRows.map((row) => (
+                <div key={row.metric} className="contents">
+                  <div className="px-5 py-4 text-white border-b border-[#27272A]/60 font-medium">{row.metric}</div>
+                  <div className="px-5 py-4 text-[#A1A1AA] border-b border-[#27272A]/60">{row.commit}</div>
+                  <div className="px-5 py-4 text-[#A1A1AA] border-b border-[#27272A]/60">{row.goal}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="text-xs text-[#A1A1AA]/50 mt-4 text-center leading-relaxed">
+            * Mức cam kết cụ thể phụ thuộc ngân sách tối thiểu, ngành hàng và điểm xuất phát của từng dự án — được xác nhận trong hợp đồng.
+          </p>
         </div>
       </section>
 

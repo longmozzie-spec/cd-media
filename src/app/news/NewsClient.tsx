@@ -7,8 +7,11 @@ import NewsCard from "@/components/ui/NewsCard";
 import FilterTabs from "@/components/ui/FilterTabs";
 import { newsCategories, NewsArticle } from "@/data/news";
 
+const PAGE_SIZE = 8;
+
 export default function NewsClient({ news }: { news: NewsArticle[] }) {
   const [activeFilter, setActiveFilter] = useState("Tất cả");
+  const [visible, setVisible] = useState(PAGE_SIZE);
 
   const filtered = activeFilter === "Tất cả"
     ? news
@@ -17,6 +20,13 @@ export default function NewsClient({ news }: { news: NewsArticle[] }) {
   // Bài nổi bật đầu tiên hiển thị dạng featured 2 cột (theo HTML)
   const featured = activeFilter === "Tất cả" ? filtered.find((n) => n.featured) : undefined;
   const rest = featured ? filtered.filter((n) => n.slug !== featured.slug) : filtered;
+  const shown = rest.slice(0, visible);
+
+  // Đổi danh mục → reset về trang đầu
+  const handleFilter = (cat: string) => {
+    setActiveFilter(cat);
+    setVisible(PAGE_SIZE);
+  };
 
   return (
     <>
@@ -32,7 +42,7 @@ export default function NewsClient({ news }: { news: NewsArticle[] }) {
             Tin Tức &amp; Nội Dung Số
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-4">
-            Góc nhìn <span className="text-[#E50914]">CD Media</span>
+            Kiến Thức, Góc Nhìn &amp; <span className="text-[#E50914]">Câu Chuyện</span>
           </h1>
           <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed max-w-xl">
             Phân tích chuyên sâu · Góc nhìn đa chiều trung lập · Chia sẻ giá trị cộng đồng.
@@ -44,7 +54,7 @@ export default function NewsClient({ news }: { news: NewsArticle[] }) {
       <section className="py-16 mt-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <FilterTabs categories={newsCategories} active={activeFilter} onChange={setActiveFilter} />
+            <FilterTabs categories={newsCategories} active={activeFilter} onChange={handleFilter} />
           </div>
 
           {/* Featured article — 2 cột */}
@@ -71,12 +81,24 @@ export default function NewsClient({ news }: { news: NewsArticle[] }) {
 
           {/* Grid 4 cột */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {rest.map((article, i) => (
+            {shown.map((article, i) => (
               <NewsCard key={article.slug} article={article} index={i} />
             ))}
           </div>
           {filtered.length === 0 && (
             <p className="text-center text-[#A1A1AA] py-12">Chưa có bài viết trong danh mục này.</p>
+          )}
+
+          {/* Nút tải thêm bài viết */}
+          {visible < rest.length && (
+            <div className="mt-12 text-center">
+              <button
+                onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#E50914]/40 text-[#E50914] text-sm font-semibold hover:bg-[#E50914]/[0.08] transition-colors"
+              >
+                Xem thêm bài viết <ArrowRight size={15} />
+              </button>
+            </div>
           )}
         </div>
       </section>

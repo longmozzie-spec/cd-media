@@ -23,6 +23,14 @@ const steps = [
   { num: "05", title: "Hậu kỳ & Bàn giao", time: "5–14 ngày" },
 ];
 
+// Năng lực thực thi — TODO: Client content required (CD Media cung cấp danh sách thiết bị + quy mô đội ngũ).
+const capabilities = [
+  { label: "Máy quay & thiết bị", value: "Cinema camera, ống kính, gimbal, drone" },
+  { label: "Studio & ánh sáng", value: "Set quay, hệ thống đèn, phông nền" },
+  { label: "Hậu kỳ", value: "Dựng phim, motion graphics, color, sound" },
+  { label: "Đội ngũ sản xuất", value: "Đạo diễn, DOP, editor, motion, âm thanh" },
+];
+
 export default function SanXuatMediaClient() {
   return (
     <>
@@ -111,6 +119,58 @@ export default function SanXuatMediaClient() {
                 <h3 className="text-white font-semibold text-sm mb-1">{step.title}</h3>
                 <p className="text-[#A1A1AA] text-xs font-mono">{step.time}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4.0 Thiết bị & Đội ngũ */}
+      <section className="py-20 bg-[#121214]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-[#A1A1AA] text-xs font-mono uppercase tracking-[0.16em] mb-3 block">Năng lực thực thi</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Thiết bị &amp; Đội ngũ</h2>
+            <p className="text-[#A1A1AA] mt-4 leading-relaxed">
+              Năng lực sản xuất tại chỗ giúp CD Media chủ động tiến độ và kiểm soát chất lượng từng khâu.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {capabilities.map((c, i) => (
+              <motion.div key={c.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="rounded-xl bg-[#1A1A1E] border border-[#27272A] p-6">
+                <div className="flex items-center gap-2 text-[#E50914] mb-3">
+                  <CheckCircle size={18} />
+                  <h3 className="text-white font-semibold text-sm">{c.label}</h3>
+                </div>
+                <p className="text-[#A1A1AA] text-sm leading-relaxed">{c.value}</p>
+              </motion.div>
+            ))}
+          </div>
+          {/* TODO: Client content required — CD Media bổ sung danh sách thiết bị cụ thể + số nhân sự production. */}
+          <p className="text-xs text-[#A1A1AA]/40 mt-6 text-center">
+            Danh sách thiết bị và quy mô đội ngũ chi tiết sẽ được cập nhật theo thông tin từ CD Media.
+          </p>
+        </div>
+      </section>
+
+      {/* 5.0 Dự án tiêu biểu */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+            <div>
+              <span className="text-[#A1A1AA] text-xs font-mono uppercase tracking-[0.16em] mb-3 block">Bằng chứng cụ thể</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Dự án sản xuất tiêu biểu</h2>
+            </div>
+            <Link href="/projects" className="inline-flex items-center gap-2 text-[#E50914] text-sm font-semibold border border-[#E50914]/30 rounded-lg px-4 py-2.5 hover:bg-[#E50914]/[0.08] transition-colors">
+              Xem tất cả dự án <ArrowRight size={14} />
+            </Link>
+          </div>
+          {/* TODO: Client content required — thay bằng 3 case study đã HOÀN THÀNH, có số liệu kết quả. */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="rounded-xl border border-dashed border-[#27272A] bg-[#1A1A1E]/40 aspect-video flex items-center justify-center text-center p-6">
+                <span className="text-[#A1A1AA]/40 text-sm">Case study {n}<br />(chờ CD Media cung cấp)</span>
+              </div>
             ))}
           </div>
         </div>

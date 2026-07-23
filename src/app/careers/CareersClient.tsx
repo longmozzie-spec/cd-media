@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Clapperboard, Rocket, Globe, ArrowRight } from "lucide-react";
 import { Career } from "@/data/careers";
 import FallbackImage from "@/components/ui/FallbackImage";
+import FreeCvForm from "@/components/ui/FreeCvForm";
 
 // "Tại sao chọn CD Media" — khung + nội dung theo tuyen-dung.html
 const whyItems = [
@@ -28,7 +29,7 @@ export default function CareersClient({ careers }: { careers: Career[] }) {
             Gia nhập đội ngũ
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-4">
-            Kiến tạo giá trị,<br /><span className="text-[#E50914]">Dẫn dắt xu hướng</span>
+            Hãy Cùng Chúng Tôi Tạo Nên Những Nội Dung <span className="text-[#E50914]">Triệu Người Theo Dõi</span>
           </h1>
           <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed max-w-xl">
             Chúng tôi đang tìm kiếm những mảnh ghép đam mê nội dung giá trị, tạo ra sức ảnh hưởng
@@ -117,6 +118,21 @@ export default function CareersClient({ careers }: { careers: Career[] }) {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 4.0 Gửi CV tự do */}
+      <section className="py-20 border-t border-[#27272A]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
+              Không thấy vị trí phù hợp? <span className="text-[#E50914]">Gửi CV tự do</span>
+            </h2>
+            <p className="text-[#A1A1AA] leading-relaxed max-w-xl mx-auto">
+              CD Media luôn tìm kiếm nhân tài. Để lại thông tin, chúng tôi sẽ liên hệ khi có vị trí phù hợp với bạn.
+            </p>
+          </div>
+          <FreeCvForm />
         </div>
       </section>
     </>

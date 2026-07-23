@@ -43,7 +43,7 @@ export const companyInfo = {
   tagline: "Kết nối tri thức - Chia sẻ giá trị",
   description: "Đơn vị truyền thông sáng tạo nội dung đa nền tảng, sản xuất phim tài liệu và triển lãm ảo.",
   phone: "0975 605 069",
-  email: "doitac@cdmedia.vn",
+  email: "data@cdmedia.vn",
   address: "56 16A-18B, Ngõ 140 Khuất Duy Tiến, Thanh Xuân, TP. Hà Nội",
   taxCode: "0110455578",
   workingHours: "Thứ 2 - Thứ 6: 8:30 - 18:00 | Thứ 7: 9:00 - 12:00",
@@ -63,3 +63,9 @@ export const companyInfo = {
   partners: ["Đài Truyền hình Việt Nam (VTV)", "Viettel", "Trung tâm Lưu trữ Quốc gia", "Euro Window", "I.Q Entertainment"],
   subsidiary: "Alva — công ty thành viên chuyên sản xuất phim tài liệu",
 };
+
+// URL gốc của site (dùng cho sitemap, robots, canonical, JSON-LD).
+// Ưu tiên biến môi trường; fallback về domain Vercel hiện tại.
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://cd-media.vercel.app"
+).replace(/\/$/, "");

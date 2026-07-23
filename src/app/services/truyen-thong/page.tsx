@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import TruyenThongClient from "./TruyenThongClient";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/ui/FaqSection";
+import { faqSchema, breadcrumbSchema } from "@/data/schema";
+import { faqTruyenThong } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "Giải Pháp Truyền Thông Chiến Lược – PR, IMC | CD Media",
@@ -8,5 +12,20 @@ export const metadata: Metadata = {
 };
 
 export default function TruyenThongPage() {
-  return <TruyenThongClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Trang chủ", path: "/" },
+            { name: "Giải pháp", path: "/services" },
+            { name: "Truyền thông", path: "/services/truyen-thong" },
+          ]),
+          faqSchema(faqTruyenThong),
+        ]}
+      />
+      <TruyenThongClient />
+      <FaqSection items={faqTruyenThong} />
+    </>
+  );
 }

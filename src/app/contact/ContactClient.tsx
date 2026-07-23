@@ -21,7 +21,7 @@ export default function ContactClient() {
             Liên Hệ
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-4">
-            Cùng bắt đầu<br /><span className="text-[#E50914]">câu chuyện của bạn</span>
+            Liên Hệ CD Media – Bắt Đầu <span className="text-[#E50914]">Dự Án Của Bạn</span>
           </h1>
           <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed max-w-xl">
             Để lại thông tin — đội ngũ CD Media sẽ liên hệ tư vấn giải pháp truyền thông phù hợp

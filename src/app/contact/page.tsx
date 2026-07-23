@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import ContactClient from "./ContactClient";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/ui/FaqSection";
+import { localBusinessSchema, faqSchema } from "@/data/schema";
+import { faqContact } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "Liên Hệ CD Media – Hợp Tác Truyền Thông & Số Hóa",
@@ -8,5 +12,11 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactClient />;
+  return (
+    <>
+      <JsonLd data={[localBusinessSchema, faqSchema(faqContact)]} />
+      <ContactClient />
+      <FaqSection items={faqContact} />
+    </>
+  );
 }

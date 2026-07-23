@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import NewsClient from "./NewsClient";
 import { getNews } from "@/lib/public-data";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema } from "@/data/schema";
+import { faqNews } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "Tin Tức & Góc Nhìn CD Media – Tri Thức, Truyền Thông",
@@ -13,5 +16,10 @@ export const revalidate = 60;
 
 export default async function NewsPage() {
   const news = await getNews();
-  return <NewsClient news={news} />;
+  return (
+    <>
+      <JsonLd data={faqSchema(faqNews)} />
+      <NewsClient news={news} />
+    </>
+  );
 }

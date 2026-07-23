@@ -6,7 +6,7 @@ export const defaultSettings: SiteSettings = {
   fullName: "CÔNG TY CD MEDIA VIỆT NAM",
   tagline: "Kết nối tri thức - Chia sẻ giá trị",
   description: "Đơn vị truyền thông sáng tạo nội dung đa nền tảng, sản xuất phim tài liệu và triển lãm ảo.",
-  email: "doitac@cdmedia.vn",
+  email: "data@cdmedia.vn",
   phone: "0876 695 969",
   address: "Tầng 4, Số 2 ngõ 90, đường Ngụy Như Kon Tum, P. Thanh Xuân, TP. Hà Nội",
   workingHours: "Thứ 2 - Thứ 6: 8:30 - 18:00 | Thứ 7: 9:00 - 12:00",

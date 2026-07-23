@@ -59,7 +59,7 @@ export default function AboutClient() {
             Về Chúng Tôi
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-4">
-            13 năm kiến tạo<br />truyền thông <span className="text-[#E50914]">thực chiến</span>
+            13 Năm Kiến Tạo Giá Trị Bằng<br />Nội Dung Và <span className="text-[#E50914]">Sáng Tạo</span>
           </h1>
           <p className="text-[#A1A1AA] text-base md:text-lg leading-relaxed max-w-xl">
             Mang đến câu chuyện thương hiệu chân thực, giàu giá trị và tạo ảnh hưởng bền vững cho
